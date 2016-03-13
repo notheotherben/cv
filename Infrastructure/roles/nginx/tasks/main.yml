@@ -19,14 +19,5 @@
   firewalld: "port={{item}} permanent=yes state=enabled immediate=yes"
   with_items: "{{nginx_ports}}"
   
-- name: install consul service
-  template: >
-    src=consul.json
-    dest=/etc/consul/haproxy.json
-    owner={{ consul_user }}
-    group={{ consul_group }}
-    mode=0644
-  notify: reload consul
-  
 - name: start nginx
   service: name=nginx state=running enabled=yes
