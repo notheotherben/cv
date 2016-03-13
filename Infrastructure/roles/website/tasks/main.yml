@@ -20,7 +20,15 @@
     force=yes
     version={{website_version}}
     
-- name: Add symlinks from the new release to the shared folder
+- name: create jspm and npm shared package folders
+  file: >
+    path='{{ deploy_helper.shared_path }}/{{ item }}'
+    state=directory
+  with_items:
+    - node_modules
+    - jspm_packages
+    
+- name: link shared package folders to release
   file: >
     path='{{ deploy_helper.new_release_path }}/{{ item.path }}'
     src='{{ deploy_helper.shared_path }}/{{ item.src }}'
