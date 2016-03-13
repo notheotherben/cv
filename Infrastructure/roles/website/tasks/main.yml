@@ -10,6 +10,7 @@
   deploy_helper: >
     path={{deployment_dir}}
     current_path={{deployment_current_dir}}
+    shared_path={{deployment_shared_dir}}
     release={{website_version}}
 
 - name: clone latest project version
@@ -19,8 +20,17 @@
     force=yes
     version={{website_version}}
     
+- name: Add symlinks from the new release to the shared folder
+  file: >
+    path='{{ deploy_helper.new_release_path }}/{{ item.path }}'
+    src='{{ deploy_helper.shared_path }}/{{ item.src }}'
+    state=link
+  with_items:
+      - { path: "Frontend/node_modules", src: "node_modules" }
+      - { path: "Frontend/jspm_packages",  src: "jspm_packages" }
+    
 - name: install npm modules
-  npm: "state=present path={{deploy_helper.new_release_path}}/Frontend"
+  npm: "state=present path='{{deploy_helper.new_release_path}}/Frontend'"
   
 - name: install jspm packages
   command: "{{deploy_helper.new_release_path}}/Frontend/{{deployment_command_path}}/jspm install chdir={{deploy_helper.new_release_path}}/Frontend"
@@ -35,5 +45,6 @@
   deploy_helper: >
     path={{deployment_dir}}
     current_path={{deployment_current_dir}}
+    shared_path={{deployment_shared_dir}}
     release={{deploy_helper.new_release}}
     state=finalize
