@@ -1,5 +1,5 @@
 ---
-nginx_repo_rpm_url: http://nginx.org/packages/rhel/7/noarch/RPMS/nginx-release-rhel-7-0.el7.ngx.noarch.rpm
+nginx_package_url: http://nginx.org/packages/mainline/centos/7/$basearch/
 
 nginx_default_sites:
  - default.conf

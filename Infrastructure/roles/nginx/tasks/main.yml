@@ -3,13 +3,14 @@
   yum: name=epel-release state=present
   
 - name: install nginx repo
-  command: "rpm -Uvh --force {{item.href}} creates={{item.creates}}"
-  with_items:
-    - href: "{{nginx_repo_rpm_url}}"
-      creates: /etc/yum.repos.d/nginx.repo
+  yumrepo: >
+    baseurl={{nginx_package_url}}
+    enable=yes
+    gpgcheck=no
+    name=nginx
       
 - name: install nginx
-  yum: name=nginx state=present
+  yum: name=nginx state=latest
   
 - name: remove default site entries
   file: "path=/etc/nginx/conf.d/{{item}} state=absent"
