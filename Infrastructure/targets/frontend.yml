@@ -1,4 +1,0 @@
----
-- hosts: frontend
-  roles:
-    - role: nginx

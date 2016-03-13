@@ -1,8 +1,5 @@
 [all:vars]
 datacenter = staging
 
-[alpha]
-alpha ansible_host=192.168.0.102
-
-[beta]
-beta1 ansible_host=192.168.0.103
+[frontend]
+cv-staging ansible_host=192.168.1.101
