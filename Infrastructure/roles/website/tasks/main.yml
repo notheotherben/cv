@@ -16,6 +16,7 @@
   git: >
     repo={{website_repo}}
     dest={{deploy_helper.new_release_path}}
+    force=yes
     version={{website_version}}
     
 - name: install npm modules
