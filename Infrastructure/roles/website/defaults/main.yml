@@ -2,7 +2,7 @@
 http_port: 80
 https_port: 443
 
-website_version: d47ea5c79f7530f162ca0454ea99fe1487a47b31
+website_version: 883ad9ed7a33625c3e8f74a7161416d6479cb826
 website_repo: https://github.com/spartan563/cv.git
 
 website_server_name: cv.sierrasoftworks.com
