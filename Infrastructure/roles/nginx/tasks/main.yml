@@ -6,6 +6,7 @@
   template: >
     src=nginx.repo
     dest=/etc/yum.repos.d/nginx.repo
+    force=no
 #   yumrepo: >
 #     baseurl={{nginx_package_url}}
 #     enable=yes
