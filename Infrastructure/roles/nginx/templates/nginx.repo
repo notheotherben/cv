@@ -1,5 +1,5 @@
 [nginx]
-description=nginx repo
+name=nginx repo
 baseurl={{nginx_package_url}}
 gpgcheck=0
 enabled=1
