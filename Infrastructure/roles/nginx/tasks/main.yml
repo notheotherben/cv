@@ -6,6 +6,7 @@
   template: >
     src=nginx.repo
     dest=/etc/yum.repos.d/nginx.repo
+    creates=/etc/yum.repos.d/nginx.repo
 #   yumrepo: >
 #     baseurl={{nginx_package_url}}
 #     enable=yes
@@ -13,7 +14,7 @@
 #     name=nginx
       
 - name: install nginx
-  yum: name=nginx state=latest
+  yum: name=nginx state=present
   
 - name: remove default site entries
   file: "path=/etc/nginx/conf.d/{{item}} state=absent"
