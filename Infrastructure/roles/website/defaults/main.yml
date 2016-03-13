@@ -10,6 +10,13 @@ website_server_name: cv.sierrasoftworks.com
 website_access_log: /var/log/nginx/access.log
 website_error_log: /var/log/nginx/error.log
 
-website_deployment_dir: /data/website/versions
-website_root_dir: /data/website/live
+deployment_dir: /data/website/versions
+deployment_current_dir: /data/website/live
+
+website_root_dir: "{{deployment_current_dir}}/Frontend"
 website_index_file: index.html
+
+website_ssl_certificate: /etc/nginx/ssl/cv.sierrasoftworks.com.crt
+website_ssl_certificate_key: /etc/nginx/ssl/cv.sierrasoftworks.com.key
+
+nginx_dhparam: /etc/nginx/ssl/dhparam.pem

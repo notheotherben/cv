@@ -4,7 +4,8 @@
 
 - name: create start deploying this version
   deploy_helper: >
-    path={{website_deployment_dir}}
+    path={{deployment_dir}}
+    current_path={{deployment_current_dir}}
     release={{website_version}}
 
 - name: clone latest project version
@@ -14,17 +15,17 @@
     version={{website_version}}
     
 - name: install npm modules
-  npm: "state=present path={{deploy_helper.new_release_path}}"
+  npm: "state=present path={{deploy_helper.new_release_path}}/Frontend"
   
 - name: install jspm packages
-  command: "jspm install chdir={{deploy_helper.new_release_path}}"
+  command: "jspm install chdir={{deploy_helper.new_release_path}}/Frontend"
   
 - name: execute gulp bundling step
-  command: "gulp bundle chdir={{deploy_helper.new_release_path}}"
+  command: "gulp bundle chdir={{deploy_helper.new_release_path}}/Frontend"
 
 - name: rollout the application version
   deploy_helper: >
-    current_path={{website_root_dir}}
-    path={{website_deployment_dir}}
+    path={{deployment_dir}}
+    current_path={{deployment_current_dir}}
     release={{deploy_helper.new_release}}
     state=finalize
