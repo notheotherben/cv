@@ -13,11 +13,11 @@
   
 - name: remove default site entries
   file: "path=/etc/nginx/conf.d/{{item}} state=absent"
-  with_items: nginx_default_sites
+  with_items: "{{nginx_default_sites}}"
     
 - name: enable firewall ports
   firewalld: "port={{item}} permanent=yes state=enabled immediate=yes"
-  with_items: nginx_ports
+  with_items: "{{nginx_ports}}"
   
 - name: install consul service
   template: >
