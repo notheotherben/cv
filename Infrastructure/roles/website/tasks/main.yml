@@ -20,6 +20,9 @@
 - name: install jspm packages
   command: "{{deploy_helper.new_release_path}}/Frontend/{{deployment_command_path}}/jspm install chdir={{deploy_helper.new_release_path}}/Frontend"
   
+- name: ensure dist directory is created
+  file: "path={{deploy_helper.new_release_path}}/Frontend/dist state=directory"
+  
 - name: execute gulp bundling step
   command: "{{deploy_helper.new_release_path}}/Frontend/{{deployment_command_path}}/gulp bundle chdir={{deploy_helper.new_release_path}}/Frontend"
 
