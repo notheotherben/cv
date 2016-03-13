@@ -10,7 +10,7 @@
     "aurelia-bundler": "^0.1.8",
     "aurelia-tools": "^0.1.3",
     "gulp": "^3.9.1",
-    "jspm": "^0.16.11"
+    "jspm": "~0.16.11"
   },
   "jspm": {
     "dependencies": {
