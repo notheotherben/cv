@@ -3,11 +3,14 @@
   yum: name=epel-release state=present
   
 - name: install nginx repo
-  yumrepo: >
-    baseurl={{nginx_package_url}}
-    enable=yes
-    gpgcheck=no
-    name=nginx
+  template: >
+    src=nginx.repo
+    dest=/etc/yum.repos.d/nginx.repo
+#   yumrepo: >
+#     baseurl={{nginx_package_url}}
+#     enable=yes
+#     gpgcheck=no
+#     name=nginx
       
 - name: install nginx
   yum: name=nginx state=latest
