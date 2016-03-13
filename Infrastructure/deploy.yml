@@ -6,3 +6,5 @@
 - hosts: frontend
   roles:
     - nginx
+    - nodejs
+    - website
