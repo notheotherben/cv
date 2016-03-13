@@ -1,0 +1,33 @@
+{
+    "bundles": {
+        "dist/app-build": {
+            "includes": [
+                "**/*.css!text",
+                "**/*.html!text",
+                "**/*.ts",
+                
+                "aurelia-bootstrapper",
+                "aurelia-history-browser",
+                "aurelia-loader-default",
+                "aurelia-loader-default",
+                "aurelia-logging-console",
+                "aurelia-router",
+                "aurelia-templating-binding",
+                "aurelia-templating-resources",
+                "aurelia-templating-router",
+                
+                "highlightjs",
+                "jquery",
+                "materialize-css",
+                "moment",
+                "ts"
+            ],
+            "excludes": [
+                
+            ],
+            "options": {
+                "minify": true
+            }
+        }
+    }
+}
