@@ -1,4 +1,7 @@
 ---
+- name: install git
+  yum: name=git state=present
+
 - name: create start deploying this version
   deploy_helper: >
     path={{website_deployment_dir}}
