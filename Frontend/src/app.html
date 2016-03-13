@@ -1,0 +1,13 @@
+<template>
+    <require from="app/components/background"></require>
+    <require from="app/components/menu-bar"></require>
+    <require from="app/components/contact-button"></require>
+    <require from="styles/styles.css"></require>
+    
+    <background></background>
+    <contact-button></contact-button>
+    
+    <menu-bar router.bind="router"></menu-bar>
+    
+    <router-view></router-view>
+</template>

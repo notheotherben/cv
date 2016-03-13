@@ -1,0 +1,23 @@
+<template>
+    <div class="abs-center">
+        <div class="card w480 center">
+            <div class="card-content">
+                <img class="circle" src="https://secure.gravatar.com/avatar/${details.gravatarID}?s=150&d=mm" alt="">
+                <h1 class="card-title">${details.firstname} ${details.lastname}</h1>
+                <p>
+                    I'm a South African software developer who is passionate about the development
+                    and operation of complex, critical systems.
+                </p>
+                <p>
+                    This website was put together as a curriculum vitae and the <a href="https://github.com/spartan563/cv">code behind it</a> is
+                    as much a reflection of my qualifications as the content itself.
+                </p>
+            </div>
+            <div class="card-action">
+                <a route-href="route: development">Dev</a>
+                <a route-href="route: operations">Ops</a>
+                <a route-href="route: engineering">Engineer</a>
+            </div>
+        </div>
+    </div>
+</template>

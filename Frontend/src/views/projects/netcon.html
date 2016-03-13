@@ -1,0 +1,153 @@
+<template>
+    <h4 class="text-center">Background</h4>
+    <p>
+        Vodacom South Africa has an internal database in which they track various details
+        about their cellphone network, including the multitude of towers and their associated
+        radio frequency antennas. This database is referred to as "Netcon" by Vodacom and their
+        business partners.
+    </p>
+    
+    <p>
+        EMSS consults for Vodacom to provide EMF safety accreditation. As part of this
+        there is a requirement to extract data from the Netcon database and surface it
+        within IXUS, EMSS's electromagnetic acccreditation tool.
+    </p>
+    
+    <p>
+        This import process is composed of 3 phases, the data import and fixing phase, the
+        difference computation phase and finally the application phase - referred to as
+        Phase 1, Phase 2 and Phase 3 respectively.
+    </p>
+    
+    <h4 class="text-center">Before Me</h4>
+    <p>
+        The previous developer on the project had developed the system prior to a large
+        amount of Vodacom's network growth and, as a result, had not focussed on the
+        scalability of his solution. This proved to be a problem, particularly in Phase 1,
+        as the size of the database grew.
+    </p>
+    
+    <p>
+        Initially imports took between 1-3 hours to complete Phase 1, however a year onwards
+        and we would be lucky to finish a Phase 1 import over a weekend. This represented a
+        significant loss in productivity, as nobody was able to work on the system while an
+        import was running.
+    </p>
+    
+    <h4 class="text-center">The Cause</h4>
+    <p>
+        These performance issues were, in many ways, caused by poor design decisions at the
+        outset of the project. Specifically, data was imported in <code>VARCHAR(500)</code> format from
+        the Netcon database file (which we received in XLS format) and then subsequently validated
+        and fixed by running a number of different steps over it. These steps would either execute
+        a SQL query to perform a batch update or open a cursor over the table and run <code>UPDATE</code>
+        queries on each record.
+    </p>
+    
+    <p>
+        This approach resulted in each step scaling (at best) linearly with export size increases
+        while the overall import time scaled non-linearly as both the data size and number of steps
+        increased.
+    </p>
+    
+    <p>
+        By far the worst performing step (often responsible for the vast majority of the time
+        spent in Phase 1) was the removal of duplicate entries from the import. This was actioned
+        by running a SQL query something like the following over the various import collections.
+    </p>
+    
+    <pre><code>DELETE FROM NetconCells WHERE dbID NOT IN (SELECT MIN(dbID) FROM NetconCells GROUP BY /* field except ID */) AND dbIDNetconImport = @ImportID</code></pre>
+    
+    <p>
+        As you can imagine, this performed atrociously and was one of the primary targets for replacement
+        when we began discussions of a rewrite.
+    </p>
+    
+    <h4 class="text-center">Objectives</h4>
+    <p>
+        There were a number of objectives for the rewrite, not least of which was improving performance.
+        Specifically, we wanted to make it easier to add new steps and data sources to Phase 1,
+        ensure that performance would scale linearly as our dataset size increased and also remove
+        any possible variances in processing time as a result of external factors.
+    </p>
+    
+    <p>
+        In addition to this, we wanted to find a way to minimize possible data variances between
+        imports on our staging and production servers, remove the need for running Phase 1 and Phase 2
+        (both of which only operated on current and historical Netcon data) on both environments
+        and add a means of testing the system without needing to run a full import.
+    </p>
+    
+    <h4 class="text-center">Approach</h4>
+    <p>
+        As a result of these requirements and my previous expertise with TDD and continuous integration
+        testing, it was decided that the rewrite would be developed with that in mind from the start.
+        This was a big departure from the rest of the IXUS project, which had no tests at all and required
+        a significant amount of time to check that changes did not break things.
+    </p>
+    
+    <p>
+        In addition to this, we adopted a pipeline approach through which a source item would pass as it was
+        used to build up a target item. This allowed us to very easily parallelize the system as well as test
+        individual stages, as there was no persistent state  we needed to worry about.
+    </p>
+    
+    <p>
+        Tying these pipeline stages together was done through the use of the brilliant
+        <a href="http://reactivex.io/">Reactive Extensions</a> library. This allowed us a lot of flexibility
+        in terms of how pipelines were joined, where to branch and how to join them. It also enabled us to
+        very easily tune performance and resource usage by adjusting the rate at which items would move through
+        various pipeline stages.
+    </p>
+    
+    <p>
+        Some of the added benefits of the approach we took included being able to run Phase 1 and Phase 2 on a
+        separate machine, removing the need to pause work on our production machines during the import and vastly
+        reducing the operational impact of running these imports. This was augmented by the addition of an Export
+        Phase prior to Phase 3, allowing us to export the data from Phase 1 and Phase 2 onto a target machine (whether
+        staging or production) and ensuring that only Phase 3 needed to be executed on the target machine.
+    </p>
+    
+    <h4 class="text-center">Challenges</h4>
+    <p>
+        To be perfectly honest; this project was, for the most part, very straightforward in terms of design and
+        implementation. There were no particularly complex techniques which we employed and likely the most complex
+        aspect was the introduction of a Dependency Injection framework from the outset.
+    </p>
+    
+    <p>
+        On the other hand, this project was assigned to one of our new developers - someone with very little prior experience
+        on C# and who hadn't before had the opportunity to design a system from scratch - always having worked in a maintainance
+        capacity. I was assigned the task of training him and ensuring that the project was delivered within a reasonable timeframe.
+    </p>
+    
+    <p>
+        My relative youth (being 4 years his junior) initially led to a significant amount of resistance - leading us
+         to spend a lot of time discussing design decisions as well as a number of situations in which we disagreed
+         on approach.
+    </p>
+    
+    <p>
+        This persisted for about two weeks as we fleshed out much of the design, however once we began implementation
+        of the project it became clear to him why many of the decisions were made and discussions became highly productive.
+    </p>
+    
+    <p>
+        I was incredibly honoured when, at the completion of Phase 1, he proceeded to thank me for taking him through the
+        design process the way I had - stating that he had never been given the opportunity to understand why those decisions
+        were made or many of the long-term implications of them on the implementation of a project.
+    </p>
+    
+    <h4 class="text-center">Results</h4>
+    <p>
+        Aside from the obvious benefits to everybody's sanity with the addition of a full unit test suite (over 600 unit
+        tests at the time of me writing this) covering every aspect of the system, we also saw some incredible performance
+        improvements as a result of moving towards a linearly scaling process.
+    </p>
+    <p>
+        Specifically, the last import we ran on the old infrastructure (February 2016) took 60 hours to complete Phase 1.
+        That same import file on the implementation took just 25 minutes to run through Phase 1. This transformed Netcon
+        from a two week process to plan, test and eventually execute an import into something which could be done over the
+        period of a day (including manually verifying that the imported data was valid).
+    </p>
+</template>

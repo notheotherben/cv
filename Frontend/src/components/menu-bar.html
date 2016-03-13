@@ -1,0 +1,27 @@
+<template>
+    <nav class="transparent">
+        <div class="nav-wrapper">
+            <a route-href="route: welcome" class="brand-logo">
+                Curriculum Vitae
+            </a>
+                        
+            <ul class="right">
+                <li>
+                    <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
+                </li>
+            </ul>
+            
+            <ul class="right hide-on-med-and-down">
+                <li class="${route.isActive ? 'active' : ''}" repeat.for="route of router.navigation">
+                    <a href="${route.href}">${route.title}</a>
+                </li>
+            </ul>
+            
+            <ul class="side-nav" id="mobile-menu">
+                <li class="${route.isActive ? 'active' : ''}" repeat.for="route of router.navigation">
+                    <a href="${route.href}">${route.title}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

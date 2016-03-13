@@ -1,0 +1,4 @@
+---
+- hosts: load-balancers
+  roles:
+    - role: haproxy

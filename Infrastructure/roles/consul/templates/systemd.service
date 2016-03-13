@@ -1,0 +1,13 @@
+[Unit]
+Description=Consul Agent
+Requires=network.service
+
+[Service]
+Environment="GOMAXPROCS=`nproc`"
+User={{ consul_user }}
+Group={{ consul_group }}
+ExecStart={{consul_install_dir}}/bin/consul agent -config-dir {{consul_config_dir}}
+ExecReload=/bin/kill -s HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

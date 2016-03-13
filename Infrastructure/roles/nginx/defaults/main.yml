@@ -1,0 +1,9 @@
+---
+nginx_repo_rpm_url: http://nginx.org/packages/rhel/7/noarch/RPMS/nginx-release-rhel-7-0.el7.ngx.noarch.rpm
+
+nginx_default_sites:
+ - default.conf
+ - example_ssl.conf
+ 
+nginx_ports:
+ - 80/tcp

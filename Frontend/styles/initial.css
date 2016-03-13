@@ -1,0 +1,22 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(top right, #4b6cb7, #182848);
+    background: -o-linear-gradient(top right, #4b6cb7, #182848);
+    background: linear-gradient(to bottom left, #4b6cb7, #182848);
+}
+
+.abs-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container.pad-top {
+    margin-top: 5em;
+}

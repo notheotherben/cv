@@ -1,0 +1,43 @@
+<template>
+    <require from="app/components/technology-card"></require>
+        
+    <div class="container">
+        <div class="card">
+            <div class="card-content justify">
+                <h1 class="card-title center">Technologies</h1>
+                
+                <p>
+                    Over the past 10 years I've worked with a wide range of different technologies.
+                    Some of them I've used because I enjoy working with them, others because I've needed
+                    to. Regardless of the reason, I've always learnt something interesting and in most cases
+                    it's made me more proficient with other related tools.
+                </p>
+                
+                <p>
+                    The following are a couple of the technologies which have been particularly memorable
+                    as well as a rough estimate of how much I enjoyed working with them as well as my confidence
+                    level when working with them (otherwise known as my StackOverflow Index).
+                </p>
+            </div>
+            
+            <div class="card-action card-section center">
+                <a route-href="route: projects">Notable Projects</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="input-field">
+                    <label for="filter">Search for a Technology</label>
+                    <input id="filter" type="text" value.bind="filter">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col s6" repeat.for="technology of technologies.technologies | filter:filter">
+                <technology-card technology.bind="technology"></technology-card>
+            </div>
+        </div>
+    </div>
+</template>

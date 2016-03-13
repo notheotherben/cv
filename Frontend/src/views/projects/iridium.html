@@ -1,0 +1,107 @@
+<template>
+    <h4 class="text-center">Background</h4>
+    <p>
+        Iridium is a MongoDB object document mapper which I developed and continue to maintain. It was
+        intended to offer a lightweight alternative to existing solutions and enhanced editor support.
+    </p>
+    
+    <p>
+        Initially I wrote Iridium using ES5 JavaScript and spent a lot of time trying to write code which
+        could be navigated effectively by Microsoft's JavaScript IntelliSense engine - however this proved
+        to be error prone and every IntelliSense update would end up breaking something. I have since
+        rewritten it on TypeScript and the results have been spectacular.
+    </p>
+    
+    <h4 class="text-center">Motivation</h4>
+    <p>
+        When I first started working on Node.js, using MySQL and <a href="https://github.com/dresende/node-orm2">node-orm2</a>,
+        I bumped heads with its lack of support for custom primary key types (a feature which wasn't available at the time).
+        This led me to start contributing to the project, and I continued to do so for a number of months. This gave me
+        a good level of exposure to the intricacies of designing an ORM, where the common pitfalls were and what trade-offs
+        needed to be made.
+    </p>
+    
+    <p>
+        Following my work there, I picked up MongoDB through 10gen's M101JS course. Off the bat it appeared to address
+        many of the concerns I'd had with RDBMSs where web applications were concerned - however the only
+        real ORM/ODM available at the time was Mongoose. Mongoose, if you've ever used it, is a rather heavy
+        beast with its own custom API and many intricacies you may not grasp at the outset.
+    </p>
+    
+    <p class="text-center">
+        <img src="/resources/iridium-intellisense.png" alt="Iridium's IntelliSense suggestions" class="responsive-img z-depth-2">
+        <br>
+        <strong>Visual Studio Code</strong> showcasing Iridium's powerful editor support. 
+    </p>
+    
+    <p>
+        This led me to seek out an alternative, I was primarily looking for one whose API mirrored the MongoDB
+        command line while offering just enough "sugar" to make working with documents within your application
+        straightforward.
+    </p>
+    
+    <h4 class="text-center">Design</h4>
+    <p>
+        I designed Iridium with two primary goals, excellent editor support (providing contextual type information)
+        and a very thin implementation which emphasised performance. The former required some clever use of generics
+        and careful design to minimize the impact a developer would feel when making use of Iridium. The latter was
+        more focussed on optimizing the code Iridium generated to allow the v8 JavaScript engine to optimize things
+        (or at the very least, not de-optimize them).
+    </p>
+    
+    <p>
+        In the end, I opted to split Iridium into three primary components: a
+        <a href="http://sierrasoftworks.github.io/Iridium/classes/core.html">Core</a> which was responsible for managing
+        the database connection and any plugins, <a href="http://sierrasoftworks.github.io/Iridium/classes/model.html">Models</a>
+        which represented the structure of a collection and finally
+        <a href="http://sierrasoftworks.github.io/Iridium/classes/instance.html">Instances</a> which represented a document.
+        This abstraction allowed me to cleanly delineate the different components of the API and keep implementations straightforward.
+    </p>
+    
+    <p>
+        I also decided to adopt a TDD approach on the project when I began its TypeScript rewrite - this had a significant
+        effect on the way components were designed so as to enable easy testing, but definitely improved the overall quality
+        of the project's codebase as a result. I have since added a focus on ensuring that the code itself is maintainable,
+        using services like <a href="https://codeclimate.com/">CodeClimate</a> and <a href="https://bithound.io">BitHound</a>
+        to alert me to problems.
+    </p>
+    
+    <p class="text-center">
+        <img src="/resources/iridium-unittests.png" alt="An excerpt of Iridium's unit test suite" class="responsive-img z-depth-2">
+        <br>
+        <strong>Iridium Unit Tests</strong> showing some of the tests that get executed during development.
+    </p>
+    
+    <h4 class="text-center">Interesting Lessons</h4>
+    <h5>Test Coverage ≠ Reliable Code</h5>
+    <p>
+        One of the lessons I learnt early on in the project was that there wasn't necessarily a correlation between high test
+        coverage and functional code. In fact, I found that it was very easy to write code which didn't work while achieving
+        100% test coverage on it.
+    </p>
+    
+    <p>
+        This, in my experience, stemmed from a number of factors - sometimes it was failing to assert your assumptions while
+        at other times it was simply by virtue of making the wrong assumptions about how the code should behave when testing
+        it. In both cases, it drew my attention to the fact that an extensive test suite shouldn't be used as a measure of
+        how well written code is, or even that it will work.
+    </p>
+    
+    <p>
+        That being said, I still believe that having an extensive test framework is a must for any large project simply because
+        it helps new developers become acquainted with the system and identify when they make breaking changes. It also encourages
+        the creation of tests whenever bugs are reported - helping to build a comprehensive regression test suite.
+    </p>
+    
+    <h5>Everyone is a Chef in Open Source</h5>
+    <p>
+        One of the most interesting experiences I've had working on Iridium is seeing the way other developers write code.
+        Irrespective of how carefully you design your API, there'll always be those who feel it should have been done differently.
+    </p>
+    
+    <p>
+        I've had many interesting "issues" reported by developers who feel Iridium's functionality is lacking in certain areas.
+        Often, this is as a result of them attempting to apply relational principles to document datastores - something I've
+        attempted to make challenging through careful design of the Iridium API.
+    </p>
+</template>

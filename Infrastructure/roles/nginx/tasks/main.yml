@@ -1,0 +1,32 @@
+---
+- name: enable EPEL repository
+  yum: name=epel-release state=present
+  
+- name: install nginx repo
+  command: "rpm -Uvh --force {{item.href}} creates={{item.creates}}"
+  with_items:
+    - href: "{{nginx_repo_rpm_url}}"
+      creates: /etc/yum.repos.d/nginx.repo
+      
+- name: install nginx
+  yum: name=nginx state=present
+  
+- name: remove default site entries
+  file: "path=/etc/nginx/conf.d/{{item}} state=absent"
+  with_items: nginx_default_sites
+    
+- name: enable firewall ports
+  firewalld: "port={{item}} permanent=yes state=enabled immediate=yes"
+  with_items: nginx_ports
+  
+- name: install consul service
+  template: >
+    src=consul.json
+    dest=/etc/consul/haproxy.json
+    owner={{ consul_user }}
+    group={{ consul_group }}
+    mode=0644
+  notify: reload consul
+  
+- name: start nginx
+  service: name=nginx state=running enabled=yes

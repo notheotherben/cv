@@ -1,0 +1,26 @@
+<template>
+    <require from="app/components/project-card"></require>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-content justify">
+                <h1 class="card-title center">Notable Projects</h1>
+                
+                <p>
+                    I've worked on a number of interesting projects, some of them from a technical perspective,
+                    others from a design perspective. Of those, I've selected a couple of notable ones which stuck
+                    with me. I've written up a short story about each of them if you're interested in knowing more
+                    about how the project started out, the decisions that were made and some of the lessons I picked
+                    up as a result of them.
+                </p>
+            </div>
+            <div class="card-action center">
+                <a route-href="route: welcome">Home</a>
+            </div>
+        </div>
+        
+        <div class="card-container">
+            <project-card project.bind="project" repeat.for="project of projects.projects"></project-card>
+        </div>
+    </div>
+</template>

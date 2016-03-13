@@ -1,0 +1,139 @@
+@code-background: #373b41;
+@code-default-color: #c5c8c6;
+@code-name-color: #f0c674;
+@code-comment-color: #707880;
+@code-number-color: #cc6666;
+@code-string-color: #b5bd68;
+@code-literal-color: #cc6666;
+@code-symbol-color: #cc6666;
+@code-regex-color: #b5bd68;
+@code-link-color: #cc6666;
+@code-diff-add-color: #b5bd68;
+@code-diff-remove-color: #cc6666;
+@code-css-selector-attr-color: #b5bd68;
+@code-css-selector-pseudo-color: #b5bd68;
+@code-css-selector-id-color: #b294bb;
+@code-attribute-color: #b294bb;
+@code-code-color: #b294bb;
+
+pre {
+    background: @code-background;
+    border-radius: 2px;
+    
+    &>code.hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+    }
+}
+
+.hljs {
+    &::selection,
+    &::-moz-selection,
+    span::selection,
+    span::-moz-selection {
+        background: @code-background;
+    }
+}
+
+.hljs,
+.hljs-subst {
+    color: @code-default-color;
+}
+
+.hljs-title,
+.hljs-name {
+    color: @code-name-color;
+}
+
+.hljs-comment,
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+    color: @code-comment-color;
+}
+
+.hljs-number {
+    color: @code-number-color;
+}
+
+.hljs-symbol {
+    color: @code-symbol-color;
+}
+
+.hljs-literal {
+    color: @code-literal-color;
+}
+
+.hljs-deletion {
+    color: @code-diff-remove-color;
+}
+
+.hljs-link {
+    color: @code-link-color;
+}
+
+.hljs-string {
+    color: @code-string-color;
+}
+
+.hljs-doctag {
+    color: @code-comment-color;
+}
+
+.hljs-addition {
+    color: @code-diff-add-color;
+}
+.hljs-regexp {
+    color: @code-regex-color;
+}
+
+.hljs-selector-attr {
+    color: @code-css-selector-attr-color;
+}
+
+.hljs-selector-pseudo {
+  color: @code-css-selector-pseudo-color;
+}
+
+.hljs-attribute {
+    color: @code-attribute-color;
+}
+
+.hljs-code {
+    color: @code-code-color;
+}
+
+.hljs-selector-id {
+ color: @code-css-selector-id-color;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-bullet,
+.hljs-tag {
+ color: #81a2be;
+}
+
+.hljs-subst,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #8abeb7;
+}
+
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-quote,
+.hljs-section,
+.hljs-selector-class {
+  color: #de935f;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

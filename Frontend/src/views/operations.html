@@ -1,0 +1,58 @@
+<template>
+    <div class="container">
+        <div class="row">
+            <div class="col m8 offset-m2">
+                <div class="card">
+                    <div class="card-content justify">
+                        <h1 class="card-title center">Operations</h1>
+                    </div>
+                    
+                    <div class="card-action card-section center">
+                        <a route-href="route: welcome">Home</a>
+                    </div>
+                    
+                    <div class="card-content justify">
+                        <p>
+                            My first forray into ops started while I was at school, thanks to a number of my friends.
+                            While I had spent much of my childhood working with computers, it wasn't until Ryan offered
+                            me a virtual machine on a server of his that I truly began learning how to manage a server
+                            and its various systems.
+                        </p>
+                        
+                        <p>
+                            Initially this was simply a matter of setting up a relatively simple LAMP server, but it soon
+                            became an opportunity for me to start learning how to handle things like application failures,
+                            rolling deployments and even hosting my own Gitorious instance.
+                        </p>
+                        
+                        <p>
+                            If there was ever something which forced me to become intimately familiar with Linux, it was
+                            definitely Gitorious... Without an installer, and with plenty of quirks in its early releases,
+                            it took me a good week to get my first (very buggy) installation working. Combine that with
+                            at least a day's worth of downtime every time an update was released, I soon became good friends
+                            with my SSH terminal session and <code class="bash">vim</code>.
+                        </p>
+                        
+                        <p>
+                            I have since moved on from fighting with unfriendly Rails applications and now manage no fewer
+                            than 6 different clusters hosting everything from .NET web applications on Windows Server to
+                            Node.js APIs on SmartOS and CentOS, I even have a cluster running GitLab (which is WAY less
+                            effort to get working that Gitorious ever was). Some of these clusters are manually managed,
+                            generally because there isn't much that needs managing on them, however I also use a combination
+                            of WinRM and Ansible to manage others - helping me automate application deployments and maintainance
+                            tasks.
+                        </p>
+                        
+                        <p>
+                            I'm currently in the process of defining as much of my infrastructure as possible using Ansible
+                            playbooks, applying many of the continuous deployment principles I use in software development
+                            to the infrastructure which runs that very software. This has been an incredibly interesting
+                            experience, where it has become possible to rollout infrastructure changes simply by making
+                            a <code class="bash">git push</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

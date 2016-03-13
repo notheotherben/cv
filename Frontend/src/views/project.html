@@ -1,0 +1,30 @@
+<template>
+    <div class="container">
+        <div class="card">
+            <div class="card-content center">
+                <h1>${project.name}</h1>
+                <p>
+                    <a href="${project.url}">${project.url}</a>
+                </p>
+                <p>
+                    ${project.summary}
+                </p>
+                
+                <a class="chip ${tech | technologyColour}" repeat.for="tech of project.technologies" href="${tech.url}" target="_blank">
+                    <i class="material-icons">${tech | technologyIcon}</i>
+                    ${tech.name}
+                </a>
+            </div>
+            <div class="card-action card-section center">
+                <a route-href="route: welcome">Home</a>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                    <div class="col justify">
+                        <compose model.bind="project" view-model="app/views/projects/${project.id}"></compose>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

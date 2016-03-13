@@ -1,0 +1,17 @@
+<template>
+    <div class="card">
+        <div class="card-content justify">
+            <h3 class="card-title center">${project.name}</h3>
+            <p>${project.summary}</p>
+            
+            <a class="chip ${tech | technologyColour}" repeat.for="tech of project.technologies" href="${tech.url}" target="_blank">
+                <i class="material-icons">${tech | technologyIcon}</i>
+                ${tech.name}
+            </a>
+        </div>
+        <div class="card-action center">
+            <a if.bind="project.story" route-href="route: project; params.bind: { id: project.id }">Story</a>
+            <a if.bind="project.url" href="${project.url}">Website</a>
+        </div>
+    </div>
+</template>

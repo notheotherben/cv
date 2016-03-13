@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "name": "{{haproxy_consul_name}}",
+      "tags": [{% for tag in haproxy_consul_tags %}"{{tag}}"{% if not loop.last %}, {% endif %}{% endfor %}],
+      "port": {{ haproxy_consul_port }},
+      "checks": [
+        {
+          "http": "{{ haproxy_health_url }}",
+          "interval": "{{ haproxy_health_interval }}",
+          "timeout": "{{ haproxy_health_timeout }}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+<template>
+    <h4 class="text-center">Background</h4>
+    <p>
+        FieldSense was originally designed to offer a practical safety solution for antenna
+        maintainance personnel, warning them when they were potentially being exposed to harmful
+        levels of electromagnetic radiation.
+    </p>
+    
+    <p>
+        The first version offered a limited amount of functionality but its relatively low cost
+        and rugged design meant that, for the first time, it was cost effective for antenna operators
+        to procure personal RF monitors for their workers.
+    </p>
+    
+    <p>
+        With the second itteration of FieldSense the aim was to provide information for exposure
+        across a wider frequency spectrum, offer additional useful functionality and provide a
+        logging tool through which users would be able to review exposure data at a later date.
+    </p>
+    
+    <h4 class="text-center">The Device</h4>
+    <p>
+        The FieldSense device consists of a small, ruggedised, device which records and displays
+        the wearer's exposure level across a wide range of the RF spectrum. It was designed to
+        be significantly more affordable than competing devices and the latest version offers
+        features including a fall alarm and voice note recording.
+    </p>
+    
+    <p class="text-center">
+        <img class="responsive-img z-depth-2" src="/resources/fieldsense-device.png" alt="The FieldSense Device">
+        <br>
+        <strong>FieldSense Device</strong> mounted on an antenna worker's harness
+    </p>
+    
+    <h4 class="text-center">My Brief</h4>
+    <p>
+        I was brought on at a late stage of the project, once much of the hardware design had been
+        completed and primarily with the task of developing a user friendly tool through which
+        customers would be able to review recorded exposure data.
+    </p>
+    
+    <p>
+        There was an emphasis placed on making the tool easy to use, as well as pressure to develop
+        it in C/C++ to enable reuse of the existing device communication library. EMSS's previous
+        experience with Qt made this the obvious choice, when combined with the request to make it
+        cross-platform capable.
+    </p>
+    
+    <p>
+        I was also told that I would have approximately 1 month to put the application together and
+        make it ready for release - a very limited amount of time given the initial scope and even
+        more so when you take later developments into account.
+    </p>
+    
+    <h4 class="text-center">The Development Process</h4>
+    <p>
+        Development started at the start of September 2015 and it became immediately apparent that the
+        existing device communication "library", which had been written by our electromagnetic expert,
+        would not satisfy our requirements. Not only was it tightly coupled to his testing application,
+        it offered no testability, depended on a wide range of obscure and scattered global state variables
+        and was almost impossible to read (500 line functions doing low-level device communication with no comments). 
+    </p>
+    
+    <p>
+        This meant that, prior to developing a user interface, I would need to spend time developing a
+        communication library which would be responsible for abstracting much of the nuance related to
+        retrieving data from the device and exposing it in a usable form. There was additional pressure
+        to ensure that the new communication library could be adopted for use by the hardware development
+        team for testing and diagnostic purposes - something they had previously not been able to automate.
+    </p>
+    
+    <p>
+        I drew on my experience developing a MXit client library (a project I undertook while at school, following
+        their publication of their protocol) to build a highly extensible, command-pattern based client library.
+        This library was written on Qt and many of the controls, by virtue of my limited timeframe, integrated
+        support for Qt's signals and slots. Initially this was driven as a consequence of limited time, but the
+        result was a very loosely coupled library which allowed me to easily configure it for a wide range of
+        tasks with minimal effort.
+    </p>
+    
+    <h4 class="text-center">Interesting Lessons</h4>
+    
+    <h5>QML for Configuration</h5>
+    <p>
+        One of the decisions I made early on in the project was to adope Qt's QML user interface language for the
+        project. I had worked with it previously during my time on the Nokia Developer Program and recalled it being
+        a very flexible and loosely coupled UI tool. Something I hadn't realized when first using it, however, was
+        its use as a configuration language. Due to the loosely coupled nature of our communication library as well
+        as its integration with Qt's internal signals and slots, it became trivial to assemble the higher level
+        constructs directly within QML - making the development of the frontend one of the quickest parts of the
+        project.
+    </p>
+    
+    <pre><code class="qml">import QtQuick 2.5
+import za.co.emss.fieldsense 1.0 as FieldSense
+import za.co.emss.fieldsense.packets 1.0 as FieldSensePackets
+
+Item {
+    FieldSense.Device {
+        id: device
+    }
+
+    FieldSensePackets.DeviceStatus {
+        id: deviceStatus
+        
+        onReceived: {
+            console.log("Device status received")
+        }
+    }
+    
+    Button {
+        text: "Get Device Details",
+        onClicked: {
+            device.send(deviceStatus)
+        }
+    }
+    
+    Text {
+        text: 'Device barcode: ' + device.deviceID.barcode
+    }
+    
+    Text {
+        text: 'Device battery: ' + deviceStatus.batteryVoltage.toFixed(2) + 'V'
+    }
+}
+</code></pre>
+    <p class="text-center">
+        <strong>QML Configuration</strong> An example of how one would tie together different library components within QML
+    </p>
+    
+    <h5>Interface Prototyping in HTML</h5>
+    <p>
+        In addition to this, when initially designing the interface, I had opted to prototype something in the browser
+        which showcased the kind of look I was after. I'm a big fan of the flexiblity that HTML and CSS offer you in
+        terms of styling and within a couple of hours I was able to demonstrate my initial design to our other divisions
+        - getting useful input and rapidly itterating on the design until we were happy with the result. This then gave
+        me a good blueprint to work from when implementing the interface in QML.
+    </p>
+    
+    <h5>Graphing Large Datasets</h5>
+    <p>
+        I also had an interesting time with graphing datapoints from the devices. During my prototyping phase I had opted
+        to use <a href="http://www.chartjs.org/">Chart.js</a> in the browser - and was very pleased to see that QML offered
+        an HTML API compatible Canvas implementation. This made porting Chart.js to QML very straightforward and worked well
+        until we started using the tool for diagnostic purposes on our testing devices.
+    </p>
+    
+    <p>
+        The devices record exposure values whenever the exposure changes, meaning that large periods of no change don't use
+        much memory. Our testing process, however, places the devices in a chamber in which they are exposed to a varying
+        field at various different angles for approximately 7 hours. This results in an enourmous amount of data being recorded
+        and ended up being far too much for Chart.js to handle (hundreds of thousands of data points being rendered by JavaScript...).
+    </p>
+    
+    <p>
+        This led me to implement my own native Qt graphing library using C++ - an interesting challenge and one which I had
+        not previously attempted. Rather than settling for a single graph implementation though, I looked to develop a framework
+        which would allow us to reuse the system in future projects or where alternative rendering styles were required. This
+        didn't take much time, but things like alignment of the data and abstraction of that alignment logic away from the implementation
+        definitely required some thought.
+    </p>
+    
+    <h4 class="text-center">Results</h4>
+    <p>
+        In the end, the project was delivered on time and on-spec with all parties being very happy with the way it turned out.
+        Certain aspects, like cross platform releases haven't been done yet as there hasn't yet been a need for them - however
+        adding that to the current system would be relatively straightforward as we have no platform specific dependencies and
+        Qt offers runtimes for various different platform targets. 
+    </p>
+    
+    <p>
+        I was also very pleased with the continuous deployment setup we put together for this project, which was built on top
+        of <a href="https://gitversion.readthedocs.org/en/latest/">GitVersion</a> and GitLab's CI Runner. It was my first project which
+        religiously followed GitFlow and, although it was probably too heavy a process for this project, it worked well overall.
+    </p>
+    
+    <p class="text-center">
+        <img src="/resources/fieldsense-app.png" alt="The FieldSense Application" class="responsive-img z-depth-2">
+        <br>
+        <strong>FieldSense Connector</strong> The desktop application used to view data from a FieldSense device
+    </p>
+</template>

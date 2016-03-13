@@ -1,0 +1,23 @@
+.ct-colour(@colour) {
+    .ct-chart-line,
+    .ct-slice-donut,
+    .ct-slice-pie {
+        stroke: @colour;
+    }
+}
+
+.ct-red {
+    .ct-colour( #f44336);
+    
+    &.darken-4 {
+        .ct-colour( #b71c1c);
+    }
+}
+
+.ct-amber {
+    .ct-colour( #ffc107);
+}
+
+.ct-blue {
+    .ct-colour( #2196f3);
+}

@@ -1,0 +1,31 @@
+---
+- name: install EPEL repository
+  yum: name=epel-release state=present
+  
+- name: install HAProxy
+  yum: name=haproxy state=present
+  
+- name: configure selinux to allow listening on haproxy ports
+  seboolean: name=haproxy_connect_any persistent=yes state=yes
+  
+- name: install consul service
+  template: >
+    src=consul.json
+    dest={{consul_config_dir}}/haproxy.json
+    owner={{ consul_user }}
+    group={{ consul_group }}
+    mode=0644
+    verify="consul configtest -config-file {{consul_config_dir}}/haproxy.json"
+  notify: reload consul
+  
+- name: enable selinux port for status tracking
+  seport: ports=8999 setype=http_port_t proto=tcp reload=true state=present
+  
+- name: configure haproxy
+  template: >
+    src=haproxy.conf
+    dest={{haproxy_config}}
+    verify="haproxy -c -f {{haproxy_config}}"
+  
+- name: start haproxy service
+  service: name=haproxy state=running enabled=yes

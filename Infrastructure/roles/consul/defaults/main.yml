@@ -1,0 +1,31 @@
+---
+consul_version: 0.6.3
+consul_download_file: "consul_{{consul_version}}_linux_amd64.zip"
+consul_download_url: "https://releases.hashicorp.com/consul/{{consul_version}}/{{consul_download_file}}"
+
+consul_webui_download_file: "consul_{{consul_version}}_web_ui.zip"
+consul_webui_download_url: "https://releases.hashicorp.com/consul/{{consul_version}}/{{consul_webui_download_file}}"
+
+consul_user: consul
+consul_group: consul
+consul_data_dir: /data/consul
+consul_config_dir: /etc/consul
+consul_download_dir: /tmp
+consul_install_dir: /opt/local/consul
+consul_webui_install_dir: /opt/local/consul/webui
+
+consul_is_server: false
+consul_is_webui: false
+consul_servers:
+  - 127.0.0.1
+
+consul_domain: consul.
+consul_node_name: "{{inventory_hostname}}"
+
+consul_port_dns: 8600
+consul_port_http: 8500
+consul_port_https: -1
+consul_port_rpc: 8400
+consul_port_server: 8300
+consul_port_serf_lan: 8301
+consul_port_serf_wan: 8302

@@ -1,0 +1,29 @@
+<template>
+    <require from="app/components/chart"></require>
+    
+    <div class="card">
+        <div class="card-content center">
+            <h3 class="card-title center">${technology.name}</h3>
+            
+            <chart data.bind="enjoymentData" options.bind="chartOptions" aspect="ct-chart-inline ct-blue">
+                <template replace-part="icon">
+                    <i class="material-icons blue-text">thumb_up</i>
+                    <br>
+                    <small>Enjoyment</small>
+                </template>
+            </chart>
+            
+            <chart data.bind="proficiencyData" options.bind="chartOptions" aspect="ct-chart-inline ct-amber">
+                <template replace-part="icon">
+                    <i class="material-icons amber-text">lightbulb_outline</i>
+                    <br>
+                    <small>Proficiency</small>
+                </template>
+            </chart>
+        </div>
+        <div class="card-action center">
+            <span class="uppercase">${technology.type}</span>
+            <a href="${technology.url}">Website</a>
+        </div>
+    </div>
+</template>

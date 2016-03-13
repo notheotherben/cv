@@ -1,0 +1,118 @@
+<template>
+    <div class="container">
+        <div class="row">
+            <div class="col m5">
+                <div class="card">
+                    <div class="card-content justify">
+                        <h1 class="card-title center">My Details</h1>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Full Name</strong></td>
+                                    <td>${details.fullname}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Address</strong></td>
+                                    <td>
+                                        ${details.location.city}, ${details.location.postalCode}
+                                        <br>
+                                        ${details.location.province}, ${details.location.country}
+                                    </td>
+                                </tr>
+                                <tr repeat.for="contact of details.contactDetails">
+                                    <td><strong>${contact.type}</strong></td>
+                                    <td><a href="${contact.url}">${contact.address}</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col m7">
+                <div class="card">
+                    <div class="card-content justify">
+                        <h2 class="card-title center">Introduction</h2>
+                        <p>
+                            I've managed to make a job out of my favourite hobby and, much to the amusement of my grandparents,
+                            am absolutely loving it. I started writing code at the age of 12 and since then I've worked on
+                            everything from compilers, to mobile security applications, websites and web applications, analytics
+                            tools and libraries. Lots and lots of libraries... In fact, if I were to chose the part of development
+                            which I enjoy most, it would definitely be designing and implementing interfaces between systems -
+                            that includes protocol design, REST APIs and libraries which enable developers to more easily consume
+                            services.
+                        </p>
+                        <p>
+                            Over the past couple of years I have spent much of my time on open source projects, particularly with
+                            Node.js and Go, but I've also had an insatiable curiosity for new things. That has led me to try many
+                            different languages, frameworks and tools - much of which is done in my free time. The result is that,
+                            although I'm rather young ("Happy 14th Birthday!" being a common joke around the office whenever that
+                            time of year comes around) I have become the go-to guy for any queries about new technologies or approaches.
+                        </p>
+                        
+                        <p>
+                            Contrary to what some people have told me, I've found that learning how to solve problems in various
+                            different tools has actually improved my ability to solve them in others - often giving me perspectives
+                            others may miss at a cursory glance and definitely making the design process far more interesting for me.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col m7">
+                <div class="card">
+                    <div class="card-content justify">
+                        <h2 class="card-title center">Hobbies</h2>
+                        <p>
+                            While I absolutely love development, I've got a number of other hobbies which also compete
+                            for my time. These include hiking, scuba diving and computer gaming. I'm incredibly lucky
+                            right now to be living in one of the most beautiful cities in the world - surrounded by
+                            mountains and with the ocean just a quick drive away - something I take great advantage of.
+                        </p>
+                        
+                        <p class="center">
+                            <img src="/resources/hobbies-hiking.jpg" alt="Hiking in the Mont Rochelle Nature Reserve" class="responsive-img z-depth-2">
+                            <br>
+                            <strong>Looking for snow</strong> in the Mont Rochelle Nature Reserve outside Franschoek, South Africa
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col m5">
+                <div class="card">
+                    <div class="card-content justify">
+                        <h2 class="card-title center">Timeline</h2>
+                        <p>
+                            What are the major things I've been up to over the past few years?
+                        </p>
+                    </div>
+                                        
+                    <ul class="collection">
+                        <li class="collection-item avatar" repeat.for="entry of details.timeline">
+                            <i class="material-icons circle ${entry.colour}">${entry.type}</i>
+                            
+                            <span class="title">${entry.title}</span>
+                            <p>
+                                <small>${entry.location}</small>
+                                <br>
+                                ${entry.description}
+                            </p>
+                            
+                            <span class="secondary-content" if.bind="!entry.endDate">
+                                Since ${entry.startDate | dateFormat: 'MMM \'YY'}
+                            </span>
+                            
+                            <span class="secondary-content" if.bind="entry.endDate">
+                                ${entry.startDate | dateFormat: 'MMM \'YY'}
+                                to
+                                ${entry.endDate | dateFormat:'MMM \'YY'}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
