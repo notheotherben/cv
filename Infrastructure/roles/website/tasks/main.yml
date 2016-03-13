@@ -2,6 +2,10 @@
 - name: install git
   yum: name=git state=present
 
+- name: add nginx site
+  template: src=nginx.conf dest=/etc/nginx/conf.d/cv.conf
+  notify: reload nginx
+
 - name: create start deploying this version
   deploy_helper: >
     path={{deployment_dir}}

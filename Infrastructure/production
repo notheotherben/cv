@@ -1,0 +1,5 @@
+[all:vars]
+datacenter = production
+
+[frontend]
+cv-production ansible_host=41.79.78.153
