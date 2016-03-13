@@ -12,4 +12,5 @@ nginx_ports:
  - "{{http_port}}/tcp"
  - "{{https_port}}/tcp"
  
-nginx_dhparam: /etc/nginx/ssl/dhparam.pem
+nginx_keys: /etc/nginx/ssl
+nginx_dhparam: "{{nginx_keys}}/dhparam.pem"

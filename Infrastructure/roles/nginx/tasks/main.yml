@@ -24,6 +24,9 @@
   firewalld: "port={{item}} permanent=yes state=enabled immediate=yes"
   with_items: "{{nginx_ports}}"
   
+- name: create ssl key folder
+  file: "path={{nginx_keys}} state=directory"
+  
 - name: generate dh prime params
   command: "openssl dhparam 2048 -out {{nginx_dhparam}} creates={{nginx_dhparam}}"
   
