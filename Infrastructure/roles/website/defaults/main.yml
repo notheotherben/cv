@@ -12,6 +12,7 @@ website_error_log: /var/log/nginx/error.log
 
 deployment_dir: /data/website/versions
 deployment_current_dir: /data/website/live
+deployment_command_path: node_modules/.bin
 
 website_root_dir: "{{deployment_current_dir}}/Frontend"
 website_index_file: index.html

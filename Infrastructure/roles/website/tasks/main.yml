@@ -18,10 +18,10 @@
   npm: "state=present path={{deploy_helper.new_release_path}}/Frontend"
   
 - name: install jspm packages
-  command: "jspm install chdir={{deploy_helper.new_release_path}}/Frontend"
+  command: "{{deploy_helper.new_release_path}}/Frontend/{{deployment_command_path}}/jspm install chdir={{deploy_helper.new_release_path}}/Frontend"
   
 - name: execute gulp bundling step
-  command: "gulp bundle chdir={{deploy_helper.new_release_path}}/Frontend"
+  command: "{{deploy_helper.new_release_path}}/Frontend/{{deployment_command_path}}/gulp bundle chdir={{deploy_helper.new_release_path}}/Frontend"
 
 - name: rollout the application version
   deploy_helper: >
