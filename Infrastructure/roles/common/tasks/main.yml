@@ -8,6 +8,9 @@
 - name: install selinux bindings
   yum: name=libselinux-python state=present
   
+- name: install firewalld
+  yum: name=firewalld state=present
+  
 - name: add user bpannell
   user: > 
     name=bpannell
