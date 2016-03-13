@@ -5,5 +5,9 @@ nginx_default_sites:
  - default.conf
  - example_ssl.conf
  
+http_port: 80
+https_port: 443
+ 
 nginx_ports:
- - 80/tcp
+ - "{{http_port}}/tcp"
+ - "{{https_port}}/tcp"
