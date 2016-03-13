@@ -1,0 +1,9 @@
+---
+nodejs_os: el
+nodejs_os_version: 7
+nodejs_rpm_source: https://rpm.nodesource.com/pub_4.x
+nodejs_rpm_key: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
+
+nodejs_rpm_setup: "{{nodejs_rpm_source}}/{{nodejs_os}}/{{nodejs_os_version}}/{{ansible_architecture}}/nodesource-release-{{nodejs_os}}{{nodejs_os_version}}-1.noarch.rpm"
+nodejs_baseurl: "{{nodejs_rpm_source}}/{{nodejs_os}}/{{nodejs_os_version}}/$basearch"
+nodejs_source_baseurl: "{{nodejs_rpm_source}}/{{nodejs_os}}/{{nodejs_os_version}}/SRPMS"

@@ -1,0 +1,19 @@
+---
+- name: install EPEL repo
+  yum: name=epel-release state=present
+  
+- name: install nodesource key
+  rpm_key: "key={{nodejs_rpm_key}} state=present"
+  
+- name: setup nodesource-el
+  command: "rpm -Uvh --force {{item.href}} creates={{item.creates}}"
+  with_items:
+    - href: "{{nodejs_rpm_setup}}"
+      creates: "/etc/yum.repos.d/nodesource-el.repo" 
+  
+- name: install node.js
+  yum: "name={{item}} state=present"
+  with_items:
+    - nodejs
+    - gcc-c++
+    - make
