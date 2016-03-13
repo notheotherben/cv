@@ -24,5 +24,8 @@
   firewalld: "port={{item}} permanent=yes state=enabled immediate=yes"
   with_items: "{{nginx_ports}}"
   
+- name: generate dh prime params
+  command: "openssl dhparam 2048 -out {{nginx_dhparam}}"
+  
 - name: start nginx
   service: name=nginx state=running enabled=yes
