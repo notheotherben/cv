@@ -5,6 +5,9 @@
 - name: install EPEL-Release repository
   yum: name=epel-release state=present
   
+- name: install selinux bindings
+  yum: name=libselinux-python state=present
+  
 - name: add user bpannell
   user: > 
     name=bpannell
