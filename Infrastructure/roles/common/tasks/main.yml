@@ -1,0 +1,21 @@
+---
+- name: install net-tools
+  yum: name=net-tools state=present
+  
+- name: install EPEL-Release repository
+  yum: name=epel-release state=present
+  
+- name: add user bpannell
+  user:> 
+    name=bpannell
+    comment="Cluster Administrator"
+    groups=wheel append=yes
+    password="$6$rounds=656000$qWoOUQiqT.ND7obs$SDoFUJafY.u3a9FrcSzktn/ddcK2GzoAmleXdzFinzZGaZd5izCLpe1B61xS4lxCCuW8/0FfS4FL9vb3DQI4U1"
+    
+- name: add authorized keys for bpannell
+  authorized_key:>
+    user=bpannell
+    key={{item}}
+  with_file:
+    - authorized_keys/sierra
+    - authorized_keys/bpannell-wks
