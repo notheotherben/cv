@@ -1,4 +1,7 @@
+var gulp = require('gulp');
 var bundler = require('aurelia-bundler');
 var config = require('./config/bundle.json');
 
-bundler.unbundle(config);
+gulp.task('unbundle', function() {
+    return bundler.unbundle(config);
+});

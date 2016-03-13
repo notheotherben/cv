@@ -1,32 +1,34 @@
 {
+    "force": true,
+    
     "bundles": {
-        "dist/app-build": {
+        "dist/app-bundle": {
             "includes": [
-                "**/*.css!text",
-                "**/*.html!text",
-                "**/*.ts",
+                "styles/**/*.css!text",
+                "src/**/*.html!text",
+                "src/**/*.ts",
                 
                 "aurelia-bootstrapper",
+                "aurelia-framework",
                 "aurelia-history-browser",
-                "aurelia-loader-default",
                 "aurelia-loader-default",
                 "aurelia-logging-console",
                 "aurelia-router",
                 "aurelia-templating-binding",
                 "aurelia-templating-resources",
                 "aurelia-templating-router",
+                "aurelia-polyfills",
                 
                 "highlightjs",
-                "jquery",
-                "materialize-css",
-                "moment",
-                "ts"
+                "moment"
             ],
             "excludes": [
                 
             ],
             "options": {
-                "minify": true
+                "inject": true,
+                "minify": true,
+                "rev": true
             }
         }
     }
