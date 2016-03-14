@@ -12,6 +12,8 @@
                     </div>
                     
                     <div class="card-content justify">
+                        
+                        <h5 class="center">Where I started</h5>
                         <p>
                             My first forray into ops started while I was at school, thanks to a number of my friends.
                             While I had spent much of my childhood working with computers, it wasn't until Ryan offered
@@ -33,13 +35,14 @@
                             with my SSH terminal session and <code class="bash">vim</code>.
                         </p>
                         
+                        <h5 class="center">Today</h5>
                         <p>
                             I have since moved on from fighting with unfriendly Rails applications and now manage no fewer
                             than 6 different clusters hosting everything from .NET web applications on Windows Server to
                             Node.js APIs on SmartOS and CentOS, I even have a cluster running GitLab (which is WAY less
                             effort to get working that Gitorious ever was). Some of these clusters are manually managed,
                             generally because there isn't much that needs managing on them, however I also use a combination
-                            of WinRM and Ansible to manage others - helping me automate application deployments and maintainance
+                            of WinRM and Ansible to manage others - helping me automate application deployments and maintenance
                             tasks.
                         </p>
                         
@@ -49,6 +52,51 @@
                             to the infrastructure which runs that very software. This has been an incredibly interesting
                             experience, where it has become possible to rollout infrastructure changes simply by making
                             a <code class="bash">git push</code>.
+                        </p>
+                        
+                        <p>
+                            This has also changed the way I manage application deployments, moving from reliance on SSH and
+                            SCP and instead making use of idempotent tools to help improve their reliability and safety
+                            where significant numbers of targets are concerned. 
+                        </p>
+                        
+                        <p class="center">
+                            <img src="/resources/gitlab-farmtrack-ops.png" alt="The FarmTrack Operations Build Log" class="responsive-img z-depth-2">
+                            <br>
+                            <strong>GitLab</strong> showing the results of executing a deployment task
+                        </p>
+                        
+                        <p>
+                            Another approach I've started applying to many of my projects is the use of configuration management
+                            and service discovery tools like Consul - this has provided me with an incredible degree of insight
+                            and control over the systems I run while keeping that information accessible.
+                        </p>
+                        
+                        <p>
+                            This has enabled me to delegate management tasks to non-technical team members, as well as making
+                            the lives of new team members significantly easier - since everything is thoroughly documented and
+                            easily navigatable.
+                        </p>
+                        
+                        <p class="center">
+                            <img src="/resources/consul-farmtrack.png" alt="The FarmTrack Cluster as viewed by Consul" class="responsive-img z-depth-2">
+                            <br>
+                            <strong>Consul</strong> showing the current FarmTrack cluster and some of its services.
+                        </p>
+                        
+                        <h5 class="center">The future</h5>
+                        <p>
+                            Looking to the future, I'm incredibly excited by the prospect of working on a project which
+                            adopts Docker and CoreOS. I'm also looking forward to Microsoft's Server Micro offering which
+                            should help make .NET a far more competitive cloud platform.
+                        </p>
+                        
+                        <p>
+                            Beyond that, I'd also love the chance to work with large scale monitoring tools like Prometheus/InfluxDB
+                            to create systems which are able to dynamically react to failures and shifting loads without human intervention.
+                            <br>
+                            This has primarily been driven by the results I was able to achieve using HAProxy and Consul in FarmTrack,
+                            however the level of automation there was significantly lower.
                         </p>
                     </div>
                 </div>
