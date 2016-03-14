@@ -1,4 +1,6 @@
 <template>
+    <require from="app/components/photo"></require>
+    
     <h4 class="text-center">Background</h4>
     <p>
         Iridium is a MongoDB object document mapper which I developed and continue to maintain. It was
@@ -28,11 +30,11 @@
         beast with its own custom API and many intricacies you may not grasp at the outset.
     </p>
     
-    <p class="text-center">
-        <img src="/resources/iridium-intellisense.png" alt="Iridium's IntelliSense suggestions" class="responsive-img z-depth-2">
-        <br>
-        <strong>Visual Studio Code</strong> showcasing Iridium's powerful editor support. 
-    </p>
+    <photo src="/resources/iridium-intellisense.png"
+        alt="Iridium's IntelliSense suggestions"
+        title="Visual Studio Code"
+        subtitle="demonstrating Iridium's class leading editor support.">
+    </photo>
     
     <p>
         This led me to seek out an alternative, I was primarily looking for one whose API mirrored the MongoDB
@@ -66,11 +68,11 @@
         to alert me to problems.
     </p>
     
-    <p class="text-center">
-        <img src="/resources/iridium-unittests.png" alt="An excerpt of Iridium's unit test suite" class="responsive-img z-depth-2">
-        <br>
-        <strong>Iridium Unit Tests</strong> showing some of the tests that get executed during development.
-    </p>
+    <photo src="/resources/iridium-unittests.png"
+        alt="An excerpt of Iridium's unit test suite"
+        title="Travis CI"
+        subtitle="showing a small excerpt of Iridium's unit test suite.">
+    </photo>
     
     <h4 class="text-center">Interesting Lessons</h4>
     <h5>Test Coverage ≠ Reliable Code</h5>

@@ -1,4 +1,6 @@
 <template>
+    <require from="app/components/photo"></require>
+    
     <h4 class="text-center">Background</h4>
     <p>
         FarmTrack consists of both a physical GPS receiver and logging unit, as well as a visualization platform
@@ -332,10 +334,9 @@ export class PerformanceLogger {
     
     <h4 class="text-center">The Result</h4>
     
-    
-    <p class="text-center">
-        <img src="/resources/farmtrack-website.png" alt="The FarmTrack Website" class="responsive-img z-depth-2">
-        <br>
-        <strong>FarmTrack Website</strong> showing an example of some of the data we receive
-    </p>
+    <photo src="/resources/farmtrack-website.png"
+        alt="The FarmTrack Website"
+        title="FarmTrack Website"
+        subtitle="demonstrating some of the data we visualize for our customers.">
+    </photo>
 </template>

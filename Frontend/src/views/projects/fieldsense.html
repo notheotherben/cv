@@ -1,4 +1,6 @@
 <template>
+    <require from="app/components/photo"></require>
+    
     <h4 class="text-center">Background</h4>
     <p>
         FieldSense was originally designed to offer a practical safety solution for antenna
@@ -26,11 +28,11 @@
         features including a fall alarm and voice note recording.
     </p>
     
-    <p class="text-center">
-        <img class="responsive-img z-depth-2" src="/resources/fieldsense-device.png" alt="The FieldSense Device">
-        <br>
-        <strong>FieldSense Device</strong> mounted on an antenna worker's harness
-    </p>
+    <photo src="/resources/fieldsense-device.png"
+        alt="The FieldSense Device"
+        title="FieldSense Device"
+        subtitle="mounted on an antenna worker's harness">
+    </photo>
     
     <h4 class="text-center">My Brief</h4>
     <p>
@@ -174,9 +176,10 @@ Item {
         religiously followed GitFlow and, although it was probably too heavy a process for this project, it worked well overall.
     </p>
     
-    <p class="text-center">
-        <img src="/resources/fieldsense-app.png" alt="The FieldSense Application" class="responsive-img z-depth-2">
-        <br>
-        <strong>FieldSense Connector</strong> The desktop application used to view data from a FieldSense device
-    </p>
+    <photo src="/resources/fieldsense-app.png"
+        alt="The FieldSense Application"
+        title="FieldSense Connector"
+        subtitle="is the desktop application I developed to extract exposure data from the FieldSense device.">
+    </photo>
+    
 </template>
