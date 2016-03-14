@@ -13,7 +13,7 @@
     </p>
     
     <p>
-        With the second itteration of FieldSense the aim was to provide information for exposure
+        With the second iteration of FieldSense the aim was to provide information for exposure
         across a wider frequency spectrum, offer additional useful functionality and provide a
         logging tool through which users would be able to review exposure data at a later date.
     </p>
@@ -57,7 +57,7 @@
         Development started at the start of September 2015 and it became immediately apparent that the
         existing device communication "library", which had been written by our electromagnetic expert,
         would not satisfy our requirements. Not only was it tightly coupled to his testing application,
-        it offered no testability, depended on a wide range of obscure and scattered global state variables
+        it offered no test-ability, depended on a wide range of obscure and scattered global state variables
         and was almost impossible to read (500 line functions doing low-level device communication with no comments). 
     </p>
     
@@ -82,7 +82,7 @@
     
     <h5>QML for Configuration</h5>
     <p>
-        One of the decisions I made early on in the project was to adope Qt's QML user interface language for the
+        One of the decisions I made early on in the project was to adopt Qt's QML user interface language for the
         project. I had worked with it previously during my time on the Nokia Developer Program and recalled it being
         a very flexible and loosely coupled UI tool. Something I hadn't realized when first using it, however, was
         its use as a configuration language. Due to the loosely coupled nature of our communication library as well
@@ -133,7 +133,7 @@ Item {
         In addition to this, when initially designing the interface, I had opted to prototype something in the browser
         which showcased the kind of look I was after. I'm a big fan of the flexiblity that HTML and CSS offer you in
         terms of styling and within a couple of hours I was able to demonstrate my initial design to our other divisions
-        - getting useful input and rapidly itterating on the design until we were happy with the result. This then gave
+        - getting useful input and rapidly iterating on the design until we were happy with the result. This then gave
         me a good blueprint to work from when implementing the interface in QML.
     </p>
     
@@ -148,7 +148,7 @@ Item {
     <p>
         The devices record exposure values whenever the exposure changes, meaning that large periods of no change don't use
         much memory. Our testing process, however, places the devices in a chamber in which they are exposed to a varying
-        field at various different angles for approximately 7 hours. This results in an enourmous amount of data being recorded
+        field at various different angles for approximately 7 hours. This results in an enormous amount of data being recorded
         and ended up being far too much for Chart.js to handle (hundreds of thousands of data points being rendered by JavaScript...).
     </p>
     
@@ -163,7 +163,7 @@ Item {
     <h4 class="text-center">Results</h4>
     <p>
         In the end, the project was delivered on time and on-spec with all parties being very happy with the way it turned out.
-        Certain aspects, like cross platform releases haven't been done yet as there hasn't yet been a need for them - however
+        Certain aspects, like cross-platform releases haven't been done yet as there hasn't yet been a need for them - however
         adding that to the current system would be relatively straightforward as we have no platform specific dependencies and
         Qt offers runtimes for various different platform targets. 
     </p>

@@ -13,7 +13,7 @@
     </p>
     
     <p>
-        The device's primary selling points were its high quality GPS receiver, allowing accuracies as good as 1.5m 
+        The device's primary selling points were its high quality GPS receiver, allowing for accuracies as good as 1.5m 
         on civilian GPS bands (measured as &sigma;<sub>1</sub>, or 1 standard deviation), as well as its rugged design
         and ease of use.
     </p>
@@ -112,8 +112,10 @@
     
     <p>
         FarmTrack's cluster is relatively complex, consisting of load balancers, redundant configuration servers, service
-        discovery and a redundant and sharded database cluster. It didn't start out like that however, with much of that being
-        added in response to downtime events early in FarmTrack's lifespan.
+        discovery and a mirrored and sharded database cluster. It didn't start out like that however, with much of that being
+        added in response to downtime events early in FarmTrack's lifespan - both as a result of infrastructure failures and
+        application crashes. One of the more interesting failure cases involved the Linux Out Of Memory Killer nuking our
+        process supervisor tool...
     </p>
     
     <p class="text-center">
@@ -130,7 +132,7 @@
     </p>
     
     <p>
-        We use HAProxy to provide a unified entrypoint into the cluster for all public traffic, as well as gzip compression on
+        We use HAProxy to provide a unified entry point into the cluster for all public traffic, as well as gzip compression on
         compressible outbound data. It is configured on the fly by <a href="https://github.com/hashicorp/consul-template">consul-template</a>
         based on the health of various cluster nodes and the services they make available. This allows us to very easily add
         or remove nodes from the cluster, as well as providing circuit breaking in case a node fails.
@@ -148,13 +150,13 @@
     <p>
         FarmTrack has, since the project started, been very limited in terms of time available. Much of the work done on
         automating different aspects was driven by the need to work on other projects. This, combined with a very agile
-        approach to development, has led to a system with very little excess fat. This is brilliant from a maintainance
+        approach to development, has led to a system with very little excess fat. This is brilliant from a maintenance
         view, and regular refactoring has meant that adding new features is a breeze from a technical standpoint. On the
         other hand, it means that there is little in the way of available room to "bodge" functionality onto the system. 
     </p>
     
     <p>
-        Specifically, now that the project has reached a relatively mature state, there is a lot of demand for marketting
+        Specifically, now that the project has reached a relatively mature state, there is a lot of demand for marketing
         functionality - things like "Give me graphs showing how we've improved the accuracy of the analytics algorithms.".
         We're in a tricky position where our datasets are too big to manually compare them, but not yet big enough that
         daily variances can be disregarded in our accuracy estimates.
@@ -185,7 +187,7 @@
         It is important to remember that I am the only developer working on the server and frontend aspects of the project, while
         hardware development (and all their supporting infrastructure) was managed by a team in a different building. This made
         routine communication outside of our weekly progress meetings rare. As the system matured, it became very important for
-        the hardware team to have access to our low level API for various diagnostic details and automation of their workflows.
+        the hardware team to have access to our low-level API for various diagnostic details and automation of their workflows.
     </p>
     
     <p>
@@ -204,7 +206,7 @@
     <h5>Keep your APIs Atomic</h5>
     <p>
         One of the big design decisions from the outset of the FarmTrack project was to keep the various APIs as simple as possible,
-        each dealing with a specific task and avoiding cross-polination as much as possible. Specifically, I meant to avoid situations
+        each dealing with a specific task and avoiding cross-pollination as much as possible. Specifically, I meant to avoid situations
         in which API methods were put together to solve a specific use case - rather designing them to surface or mutate specific data.
     </p>
     
@@ -231,7 +233,7 @@
     <p>
         My intention FarmTrack's performance tracking implementation was to keep database load to a minimum (we're already very write heavy
         as a result of the data we receive from the devices), allow us to view performance information at different resolutions over a period
-        of time and also ensure that we didn't use an exhorbitant amount of space to track that performance information. I also wanted to easily
+        of time and also ensure that we didn't use an exorbitant amount of space to track that performance information. I also wanted to easily
         be able to extend it to include additional information if needed, as well as keeping document size expansion to a minimum (as it requires
         MongoDB to move documents around on disk - a slow operation).
     </p>
