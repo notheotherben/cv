@@ -1,6 +1,6 @@
 <template>
     <p class="center">
-        <img src.bind="src" alt.bind="alt" class="responsive-img z-depth-2">
+        <img element.ref="image" src.bind="src" alt.bind="alt" class="responsive-img z-depth-2 materialboxed" data-caption="${title} ${subtitle}">
         <br>
         <strong>${title}</strong> ${subtitle}
     </p>
