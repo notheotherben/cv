@@ -1,4 +1,6 @@
 <template>
+    <require from="app/components/photo"></require>
+    
     <div class="container">
         <div class="row">
             <div class="col m8 offset-m2">
@@ -60,11 +62,11 @@
                             where significant numbers of targets are concerned. 
                         </p>
                         
-                        <p class="center">
-                            <img src="/resources/gitlab-farmtrack-ops.png" alt="The FarmTrack Operations Build Log" class="responsive-img z-depth-2">
-                            <br>
-                            <strong>GitLab</strong> showing the results of executing a deployment task
-                        </p>
+                        <photo src="/resources/gitlab-farmtrack-ops.png"
+                            alt="A FarmTrack build log showing the start of a deployment"
+                            title="GitLab"
+                            subtitle="showing the results of executing a deployment task for FarmTrack's frontend.">
+                        </photo>
                         
                         <p>
                             Another approach I've started applying to many of my projects is the use of configuration management
@@ -78,11 +80,11 @@
                             easily navigatable.
                         </p>
                         
-                        <p class="center">
-                            <img src="/resources/consul-farmtrack.png" alt="The FarmTrack Cluster as viewed by Consul" class="responsive-img z-depth-2">
-                            <br>
-                            <strong>Consul</strong> showing the current FarmTrack cluster and some of its services.
-                        </p>
+                        <photo src="/resources/consul-farmtrack.png"
+                            alt="Consul showing the FarmTrack cluster"
+                            title="Consul's Web Interface"
+                            subtitle="showing the FarmTrack cluster and some of its services.">
+                        </photo>
                         
                         <h5 class="center">The future</h5>
                         <p>
