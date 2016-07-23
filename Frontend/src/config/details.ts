@@ -18,12 +18,20 @@ export class Details implements IDetails {
     
     timeline: ITimelineEntry[] = [
         {
+            title: 'SRE/Monitoring',
+            location: 'Demonware Pty (Ltd), Dublin, Ireland',
+            description: 'Working to develop a next-generation monitoring system for Activision built on Docker, Mesos and Marathon.',
+            type: 'code',
+            colour: 'green',
+            startDate: new Date('2016-09-19T00:00:00Z')
+        },{
             title: 'Software Developer',
             location: 'EMSS Consulting Pty (Ltd), Stellenbosch, South Africa',
             description: 'Worked as a software developer on a number of projects, including FarmTrack and FieldSense.',
             type: 'code',
             colour: 'green',
-            startDate: new Date('2015-01-05T00:00:00Z')
+            startDate: new Date('2015-01-05T00:00:00Z'),
+            endDate: new Date('2016-09-16T00:00:00Z')
         },{
             title: 'Studying Engineering',
             location: 'Stellenbosch University, Stellenbosch, South Africa',

@@ -1,5 +1,4 @@
 import {bindable, computedFrom} from 'aurelia-framework';
-import {ChartData, ChartOptions} from './chart';
 import {Technology} from '../config/technologies';
 
 @bindable('technology')
@@ -7,20 +6,20 @@ export class TechnologyCard {
     technology: Technology;
     
     @computedFrom('technology')
-    get enjoymentData(): ChartData {
+    get enjoymentData() {
         return {
             series: [this.technology.enjoyment]
         };
     }
     
     @computedFrom('technology')
-    get proficiencyData(): ChartData {
+    get proficiencyData() {
         return {
             series: [this.technology.proficiency]
         };
     }
     
-    chartOptions: ChartOptions = {
+    chartOptions = {
         height: 150,
         width: 200,
         donut: true,

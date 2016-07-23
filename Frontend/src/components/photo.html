@@ -1,7 +1,14 @@
 <template>
     <p class="center">
-        <img element.ref="image" src.bind="src" alt.bind="alt" class="responsive-img z-depth-2 materialboxed" data-caption="${title} ${subtitle}">
+        <img src.bind="src" alt.bind="alt" class="responsive-img z-depth-2 materialboxed" click.delegate="open = true">
         <br>
         <strong>${title}</strong> ${subtitle}
     </p>
+
+    <div class="materialbox-overlay" css="opacity: ${open ? 1 : 0}; visibility: ${open ? 'visible' : 'hidden'};" click.delegate="open = false">
+        <img src.bind="src" alt.bind="alt">
+        <div class="materialbox-caption" css="display: ${open ? 'inline' : 'none' };">
+            <strong>${title}</strong> ${subtitle}
+        </div>
+    </div>
 </template>

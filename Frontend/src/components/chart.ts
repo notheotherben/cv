@@ -1,4 +1,6 @@
 import {inject, bindable} from 'aurelia-framework';
+import * as Chartist from 'chartist';
+import 'chartist/dist/chartist.css';
 
 @inject(Element)
 @bindable({

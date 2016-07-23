@@ -1,5 +1,5 @@
 import {customElement, processContent, noView, autoinject} from 'aurelia-framework';
-import * as hljs from 'highlightjs';
+import * as hljs from 'highlightjs/highlight.pack';
 
 @customElement('code')
 @processContent((compiler, resources, node: HTMLElement, instruction) => {

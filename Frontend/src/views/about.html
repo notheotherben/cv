@@ -1,5 +1,5 @@
 <template>
-    <require from="app/components/photo"></require>
+    <require from="components/photo"></require>
     
     <div class="container">
         <div class="row">
@@ -102,11 +102,15 @@
                                 ${entry.description}
                             </p>
                             
-                            <span class="secondary-content" if.bind="!entry.endDate">
+                            <span class="secondary-content" if.bind="isUpcoming(entry)">
+                                From ${entry.startDate | dateFormat: 'MMM \'YY'}
+                            </span>
+                            
+                            <span class="secondary-content" if.bind="isCurrent(entry)">
                                 Since ${entry.startDate | dateFormat: 'MMM \'YY'}
                             </span>
                             
-                            <span class="secondary-content" if.bind="entry.endDate">
+                            <span class="secondary-content" if.bind="isPrevious(entry)">
                                 ${entry.startDate | dateFormat: 'MMM \'YY'}
                                 to
                                 ${entry.endDate | dateFormat:'MMM \'YY'}

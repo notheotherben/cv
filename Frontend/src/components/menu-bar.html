@@ -7,7 +7,7 @@
                         
             <ul class="right">
                 <li>
-                    <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
+                    <a href="#" click.delegate="showMobileMenu()" class="button-collapse right"><i class="material-icons">menu</i></a>
                 </li>
             </ul>
             
@@ -17,11 +17,15 @@
                 </li>
             </ul>
             
-            <ul class="side-nav" id="mobile-menu">
+            <ul class="side-nav fixed" css="transform: translateX(${mobileMenuOpen ? 0 : (edge === 'left' ? -100 : 100) }%; ${edge}: 0;">
                 <li class="${route.isActive ? 'active' : ''}" repeat.for="route of router.navigation">
                     <a href="${route.href}">${route.title}</a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <div id="sidenav-overlay" if.bind="mobileMenuOpen" click.delegate="hideMobileMenu()">
+
+    </div>
 </template>

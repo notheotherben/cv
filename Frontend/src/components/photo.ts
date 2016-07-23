@@ -14,6 +14,6 @@ export class Photo {
     image: Element;
     
     attached() {
-        $(this.image).materialbox();
+        
     }
 }
