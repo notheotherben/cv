@@ -1,0 +1,17 @@
+.welcome-card {
+    margin: 0 auto;
+    max-width: 480px;
+    width: 100%;
+}
+
+.welcome-card-container {
+    position: static;
+    padding: 20px;
+
+    @media(min-width: 520px) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
