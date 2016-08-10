@@ -7,6 +7,7 @@ export class App {
     configureRouter(config: RouterConfiguration, router: Router) {
         this.router = router;
         
+        config.options.pushState = true;
         config.title = 'Benjamin Pannell';
         config.map([
             { route: '', name: 'welcome', moduleId: 'views/welcome', nav: false },
