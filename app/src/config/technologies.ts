@@ -4,8 +4,8 @@ export class Technologies {
             name: 'Go',
             type: 'Language',
             url: 'http://golang.org',
-            enjoyment: 8,
-            proficiency: 6
+            enjoyment: 9,
+            proficiency: 7
         },
         {
             name: 'C#',
@@ -25,7 +25,7 @@ export class Technologies {
             name: 'JavaScript',
             type: 'Language',
             url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction',
-            enjoyment: 7,
+            enjoyment: 8,
             proficiency: 8
         },
         {
@@ -40,7 +40,7 @@ export class Technologies {
             type: 'Language',
             url: 'http://www.fsharp.org/',
             enjoyment: 7,
-            proficiency: 5
+            proficiency: 4
         },
         {
             name: 'Java',
@@ -67,7 +67,7 @@ export class Technologies {
             name: 'ASP.NET',
             type: 'Framework',
             url: 'http://www.asp.net/',
-            enjoyment: 7,
+            enjoyment: 4,
             proficiency: 7
         },
         {
@@ -96,7 +96,14 @@ export class Technologies {
             type: 'Database',
             url: 'http://www.postgresql.org/',
             enjoyment: 7,
-            proficiency: 7
+            proficiency: 6
+        },
+        {
+            name: 'MySQL',
+            type: 'Database',
+            url: 'http://www.mysql.com/',
+            enjoyment: 6,
+            proficiency: 4
         },
         {
             name: 'Microsoft SQL Server',
@@ -125,6 +132,34 @@ export class Technologies {
             url: 'http://chef.io',
             enjoyment: 2,
             proficiency: 5
+        },
+        {
+            name: 'Docker',
+            type: 'Automation',
+            url: 'https://www.docker.com',
+            enjoyment: 10,
+            proficiency: 7
+        },
+        {
+            name: 'Mesosphere DC/OS',
+            type: 'Automation',
+            url: 'http://dcos.io/',
+            enjoyment: 8,
+            proficiency: 6
+        },
+        {
+            name: 'Kubernetes',
+            type: 'Automation',
+            url: 'http://kubernetes.io/',
+            enjoyment: 7,
+            proficiency: 6
+        },
+        {
+            name: 'Rancher',
+            type: 'Automation',
+            url: 'http://rancher.com/',
+            enjoyment: 8,
+            proficiency: 6
         },
         {
             name: 'NGINX',
@@ -159,6 +194,13 @@ export class Technologies {
             type: 'Operating System',
             url: 'https://www.centos.org',
             enjoyment: 8,
+            proficiency: 7
+        },
+        {
+            name: 'CoreOS',
+            type: 'Operating System',
+            url: 'https://www.coreos.com',
+            enjoyment: 9,
             proficiency: 7
         },
         {
