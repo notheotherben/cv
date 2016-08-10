@@ -1,0 +1,6 @@
+build:
+    image: node:6.3-slim
+    commands:
+        - cd app
+        - npm install --progress=false
+        - npm run build:prod
