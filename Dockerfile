@@ -2,7 +2,7 @@ FROM nginx:1.11-alpine
 
 MAINTAINER Benjamin Pannell <benjamin.pannell@gmail.com>
 
-ADD docker/nginx.conf /etc/nginx/nginx.conf
+ADD docker/nginx.conf /etc/nginx/conf.d/app.conf
 EXPOSE 3000
 
 ARG VERSION
