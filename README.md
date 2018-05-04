@@ -1,25 +1,19 @@
-# vue-template [![Build Status](https://travis-ci.org/SierraSoftworks/vue-template.svg?branch=master)](https://travis-ci.org/SierraSoftworks/vue-template)
-**An ultra-lightweight Vue web application template**
+# My Resume [![Build Status](https://drone.sierrasoftworks.com/api/badges/SPARTAN563/cv/status.svg?branch=master)](https://drone.sierrasoftworks.com/SPARTAN563/cv)
+**My personal resume in a website**
 
-This template tries to push the limits of how light a Vue application can
-be while still offering an extensive set of features. It tries its best to
-avoid having heavy devlopment dependencies (like WebPack and Babel) while
-still allowing you to write your code in TypeScript and make use of some of
-the great libraries available for Vue.js.
+This is a web-based version of my resume done primarily because I find it
+far easier to make something look good on the web than I do in Word or
+Google Docs.
 
-## Features
- - TypeScript
- - Vue.js
- - ElementUI
- - Vue-Router
- - Vuex
- - Material Icons
- - Markdown Support
- - Browser-Sync
- - Builds a Docker container
+The website itself is visible at
+[cv.sierrasoftworks.com](https://cv.sierrasoftworks.com) and is hosted
+on a Kubernetes cluster, deployed with [Helm](https://helm.sh) and served
+by a combination of [Traefik](https://traefik.io) and [NGINX](https://www.nginx.com).
 
-There are also a number of example filters, components and views to showcase
-how to use the template, not to mention a store implementation and API client.
+The website is written on top of [Vue.js](https://vuejs.org) and makes
+use of my minimalist [vue-template](https://github.com/SierraSoftworks/vue-template)
+to keep the development and build time dependencies to a minimum while
+still being easy to develop on and maintain.
 
 ## Development
 ```bash
