@@ -1,0 +1,20 @@
+export const adjectives: string[] = [
+    "Engineer",
+    "Developer",
+    "Innovator",
+    "Curious",
+    "Explorer",
+    "Adventurer",
+    "Pathfinder",
+    "Enthusiastic",
+    "Hiker",
+    "Technical",
+    "Operations",
+    "Visionary",
+    "Mentor",
+    "Rescue Diver",
+    "Motorcyclist",
+    "Camper",
+    "Gamer",
+    "Aspiring Pilot"
+]

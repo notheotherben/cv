@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Benjamin Pannell</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/index.css">
+        <link rel="stylesheet" href="/resources/entypo.css">
+        <link rel="stylesheet" href="/index.css">
+
+        <script src="https://unpkg.com/vue@2.x"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script src="https://unpkg.com/vuex"></script>
+        <script src="https://unpkg.com/element-ui@2.x/lib/index.js"></script>
+        <script src="https://unpkg.com/element-ui@2.x/lib/umd/locale/en.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <el-container id="app">
+            <el-header height="90px" class="topbar">
+                <el-row type="flex" justify="space-between" align="center">
+                    <el-col :span="8">
+                        <h2 class="topbar-title">
+                            Benjamin Pannell
+                            <span class="topbar-title__subtitle">
+                                Curriculum Vitae
+                            </span>
+                        </h2>
+                    </el-col>
+
+                    <el-col :span="8" class="topbar-description">
+                        SRE | <adjectives :list="adjectives"></adjectives>
+                    </el-col>
+                </el-row>
+            </el-header>
+
+            <el-main v-loading.body="loading">
+                <router-view :key="$route.fullPath"></router-view>
+            </el-main>
+
+            <el-footer class="footerbar">
+                <dynamic-quote></dynamic-quote>
+            </el-footer>
+        </el-container>
+
+        <script src="https://cdn.ravenjs.com/3.19.1/vue/raven.min.js" crossorigin="anonymous"></script>
+        <script>Raven.config('https://a0893ceb1056429cbc90f3ac71339484@sentry.sierrasoftworks.com/34').install();</script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js" data-main="/require.js"></script>
+        <script src="/bundle.js"></script>
+        
+        <script src="https://unpkg.com/element-ui@2.x/lib/index.js"></script>
+        <script src="https://unpkg.com/element-ui@2.x/lib/umd/locale/en.js"></script>
+
+        <script src="/index.js"></script>
+    </body>
+</html>

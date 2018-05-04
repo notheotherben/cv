@@ -1,0 +1,31 @@
+{
+    "name": "cv",
+    "private": true,
+    "version": "2.0.0",
+    "description": "My personal CV website",
+    "author": "Benjamin Pannell <benjamin.pannell@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SPARTAN563/cv.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "start": "node dev.js",
+        "build": "tsc",
+        "watch": "tsc --watch"
+    },
+    "devDependencies": {
+        "@types/highlight.js": "^9.12.2",
+        "@types/markdown-it": "0.0.4",
+        "@types/moment": "^2.13.0",
+        "@types/requirejs": "^2.1.31",
+        "browser-sync": "^2.18.12",
+        "connect-history-api-fallback": "^1.3.0",
+        "typescript": "^2.7.1",
+        "vue": "^2.5.13",
+        "vue-class-component": "^6.1.2",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1"
+    },
+    "dependencies": {}
+}
