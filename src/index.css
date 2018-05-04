@@ -135,6 +135,10 @@ li {
     margin: 0.2em;
 }
 
+.adjectives::before {
+    display: none;
+}
+
 .adjectives-entry {
     opacity: 0;
     position: absolute;
@@ -249,4 +253,66 @@ li {
 
 .tldr p:first-of-type {
     margin-top: -1rem;
+}
+
+@media print {
+    a {
+        color: #000;
+    }
+
+    .cv h1,
+    .cv h2,
+    .cv h3,
+    .cv h4,
+    .cv h5,
+    .cv h6 {
+        zoom: 1.4;
+    }
+
+    .adjectives-entry {
+        display: none;
+    }
+
+    .details {
+        page-break-after: always;
+    }
+
+    .details-links {
+        display: none;
+    }
+
+    .details-extra dt {
+        min-width: calc(50% - 2.5rem);
+    }
+
+    .details-extra dd {
+        min-width: calc(50% - 2.5rem);
+    }
+
+    .introduction {
+        padding-top: 0.5rem;
+        page-break-before: always;
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+
+    .adjectives::before {
+        display: inline-block;
+        content: "Developer";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .cv > div {
+        padding: 0.5rem 1rem;
+        page-break-before: always;
+        page-break-after: always;
+        page-break-inside: avoid;
+        background: #fff !important;
+    }
+
+    .footerbar {
+        display: none;
+    }
 }
