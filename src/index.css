@@ -117,7 +117,7 @@ li {
 
 .dynamic-quote figcaption:before {
     display: inline;
-    content: "–";
+    content: "\2014";
     padding-right: 0.5em;
 }
 
