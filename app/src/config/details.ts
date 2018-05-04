@@ -10,17 +10,17 @@ export class Details implements IDetails {
     
     citizenship = ["South African", "Irish"];
     location: ILocation = {
-        city: 'Stellenbosch',
-        postalCode: 7600,
-        province: 'Western Cape',
-        country: 'South Africa'
+        city: 'Dublin',
+        postalCode: 8,
+        province: 'County Dublin',
+        country: 'Ireland'
     };
     
     timeline: ITimelineEntry[] = [
         {
             title: 'SRE/Monitoring',
             location: 'Demonware Pty (Ltd), Dublin, Ireland',
-            description: 'Working to develop a next-generation monitoring system for Activision built on Docker, Mesos and Marathon.',
+            description: 'Working to develop a next-generation monitoring and automated remediation service for Activision built on Docker, Sensu and StackStorm.',
             type: 'code',
             colour: 'green',
             startDate: new Date('2016-09-19T00:00:00Z')
@@ -93,8 +93,8 @@ export class Details implements IDetails {
         },
         {
             type: "Phone",
-            url: "tel:27728642055",
-            address: "(+27) 072 864 2055"
+            url: "tel:353897046706",
+            address: "(+353) 089 704 6706"
         },
         {
             type: "Website",

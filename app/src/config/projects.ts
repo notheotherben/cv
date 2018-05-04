@@ -9,6 +9,12 @@ export class Projects {
     
     public projects: Project[] = [
         {
+            id: 'razz',
+            name: 'Razzmatazz',
+            summary: 'Highly scalable monitoring, automated remediation and fault escalation service to support some of the biggest online games in the world.',
+            technologies: this.tech.subset('MongoDB', 'Redis', 'Git', 'NGINX', 'Docker', 'Sensu', 'StackStorm', 'Python', 'CentOS')
+        },
+        {
             id: 'farmtrack',
             name: 'FarmTrack',
             url: 'http://farmtracksa.com',

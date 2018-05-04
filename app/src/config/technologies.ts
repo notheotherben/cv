@@ -120,6 +120,13 @@ export class Technologies {
             proficiency: 6
         },
         {
+            name: 'RabbitMQ',
+            type: 'Queue',
+            url: 'https://www.rabbitmq.com',
+            enjoyment: 5,
+            proficiency: 4
+        },
+        {
             name: 'Ansible',
             type: 'Automation',
             url: 'http:/www.ansible.com',
@@ -230,6 +237,20 @@ export class Technologies {
             url: 'http://git-scm.com',
             enjoyment: 8,
             proficiency: 7
+        },
+        {
+            name: 'Sensu',
+            type: 'Monitoring',
+            url: 'https://sensuapp.org',
+            enjoyment: 6,
+            proficiency: 9
+        },
+        {
+            name: 'StackStorm',
+            type: 'Automation',
+            url: 'https://stackstorm.com/',
+            enjoyment: 7,
+            proficiency: 8
         }
     ];
     
