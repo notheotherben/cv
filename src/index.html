@@ -4,6 +4,7 @@
         <title>Benjamin Pannell</title>
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/display.css">
         <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/index.css">
         <link rel="stylesheet" href="/resources/entypo.css">
         <link rel="stylesheet" href="/index.css">
@@ -20,7 +21,7 @@
         <el-container id="app">
             <el-header height="90px" class="topbar">
                 <el-row type="flex" justify="space-between" align="center">
-                    <el-col :span="8">
+                    <el-col :xs="24" :sm="12" :md="8">
                         <h2 class="topbar-title">
                             Benjamin Pannell
                             <span class="topbar-title__subtitle">
@@ -29,7 +30,7 @@
                         </h2>
                     </el-col>
 
-                    <el-col :span="8" class="topbar-description">
+                    <el-col :xs="24" :sm="12" :md="8" class="topbar-description hidden-xs-only">
                         SRE | <adjectives :list="adjectives"></adjectives>
                     </el-col>
                 </el-row>

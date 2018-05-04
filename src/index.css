@@ -181,6 +181,10 @@ li {
     overflow: hidden;
 }
 
+.details-links, .details-links p {
+    text-align: center;
+}
+
 .details-links a {
     padding: 0.2rem 0.4rem;
     color: #666;
