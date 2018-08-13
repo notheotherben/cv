@@ -316,6 +316,10 @@ li {
         background: #fff !important;
     }
 
+    .secret {
+        display: none;
+    }
+
     .footerbar {
         display: none;
     }

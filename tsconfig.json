@@ -12,6 +12,8 @@
             "es2015",
             "dom"
         ],
-        "outFile": "src/bundle.js"
+        "outFile": "src/bundle.js",
+        "sourceMap": true,
+        "removeComments": true
     }
 }
