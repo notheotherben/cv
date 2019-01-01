@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-40095482-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', 'UA-40095482-1');
-        </script>
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-40095482-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        <title>Benjamin Pannell</title>
+        gtag('config', 'UA-40095482-1');
+    </script>
 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/display.css">
-        <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/index.css">
-        <link rel="stylesheet" href="/resources/entypo.css">
-        <link rel="stylesheet" href="/index.css">
+    <title>Benjamin Pannell</title>
 
-        <script src="https://unpkg.com/vue@2.x"></script>
-        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-        <script src="https://unpkg.com/vuex"></script>
-        <script src="https://unpkg.com/element-ui@2.x/lib/index.js"></script>
-        <script src="https://unpkg.com/element-ui@2.x/lib/umd/locale/en.js"></script>
-        <script src="https://cdn.ravenjs.com/3.26.2/vue/raven.min.js" crossorigin="anonymous"></script>
-        <script>Raven.config('https://a0893ceb1056429cbc90f3ac71339484@sentry.sierrasoftworks.com/34').install();</script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/display.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.x/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/resources/entypo.css">
+    <link rel="stylesheet" href="/index.css">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <el-container id="app">
-            <el-header height="90px" class="topbar">
-                <el-row type="flex" justify="space-between" align="center">
-                    <el-col :xs="24" :sm="12" :md="8">
-                        <h2 class="topbar-title">
-                            Benjamin Pannell
-                            <span class="topbar-title__subtitle">
-                                Curriculum Vitae
-                            </span>
-                        </h2>
-                    </el-col>
+    <script src="https://unpkg.com/vue@2.x"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <script src="https://unpkg.com/element-ui@2.x/lib/index.js"></script>
+    <script src="https://unpkg.com/element-ui@2.x/lib/umd/locale/en.js"></script>
+    <script src="https://js.sentry-cdn.com/86cc1b0e98cb4ea1ba3f7e7b83174ac3.min.js" crossorigin="anonymous"></script>
 
-                    <el-col :xs="24" :sm="12" :md="8" class="topbar-description hidden-xs-only">
-                        SRE | <adjectives :list="adjectives"></adjectives>
-                    </el-col>
-                </el-row>
-            </el-header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-            <el-main v-loading.body="loading">
-                <router-view :key="$route.fullPath"></router-view>
-            </el-main>
+<body>
+    <el-container id="app">
+        <el-header height="90px" class="topbar">
+            <el-row type="flex" justify="space-between" align="center">
+                <el-col :xs="24" :sm="12" :md="8">
+                    <h2 class="topbar-title">
+                        Benjamin Pannell
+                        <span class="topbar-title__subtitle">
+                            Curriculum Vitae
+                        </span>
+                    </h2>
+                </el-col>
 
-            <el-footer class="footerbar">
-                <dynamic-quote></dynamic-quote>
-            </el-footer>
-        </el-container>
+                <el-col :xs="24" :sm="12" :md="8" class="topbar-description hidden-xs-only">
+                    SRE | <adjectives :list="adjectives"></adjectives>
+                </el-col>
+            </el-row>
+        </el-header>
 
-        <script src="https://cdn.ravenjs.com/3.19.1/vue/raven.min.js" crossorigin="anonymous"></script>
-        <script>Raven.config('https://a0893ceb1056429cbc90f3ac71339484@sentry.sierrasoftworks.com/34').install();</script>
+        <el-main v-loading.body="loading">
+            <router-view :key="$route.fullPath"></router-view>
+        </el-main>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js" data-main="/require.js"></script>
-        <script src="/bundle.js"></script>
-        
-        <script src="https://unpkg.com/element-ui@2.x/lib/index.js"></script>
-        <script src="https://unpkg.com/element-ui@2.x/lib/umd/locale/en.js"></script>
+        <el-footer class="footerbar">
+            <dynamic-quote></dynamic-quote>
+        </el-footer>
+    </el-container>
 
-        <script src="/index.js"></script>
-    </body>
+    <script src="https://cdn.ravenjs.com/3.19.1/vue/raven.min.js" crossorigin="anonymous"></script>
+    <script>Raven.config('https://a0893ceb1056429cbc90f3ac71339484@sentry.sierrasoftworks.com/34').install();</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js" data-main="/require.js"></script>
+    <script src="/bundle.js"></script>
+
+    <script src="https://unpkg.com/element-ui@2.x/lib/index.js"></script>
+    <script src="https://unpkg.com/element-ui@2.x/lib/umd/locale/en.js"></script>
+
+    <script src="/index.js"></script>
+</body>
+
 </html>

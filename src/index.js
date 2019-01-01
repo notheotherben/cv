@@ -48,5 +48,12 @@ define("vue", ["vue-module"], (Vue) => ({ "default": Vue }))
 define("vue-router", ["vue-router-module"], (VueRouter) => ({ "default": VueRouter }))
 
 requirejs(["vue", "element-ui"], (Vue, ELEMENT) => {
-    requirejs(["app"], function(app) {})
+    Sentry.forceLoad()
+    Sentry.onLoad(() => {
+        Sentry.init({
+            integrations: [new Sentry.Integrations.Vue({ Vue })]
+        })
+    })
+
+    requirejs(["app"], function (app) { })
 })
