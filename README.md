@@ -1,4 +1,4 @@
-# My Resume [![Build Status](https://drone.sierrasoftworks.com/api/badges/SPARTAN563/cv/status.svg?branch=master)](https://drone.sierrasoftworks.com/SPARTAN563/cv)
+# My Resume [![Build Status](https://travis-ci.org/SPARTAN563/cv.svg?branch=master)](https://travis-ci.org/SPARTAN563/cv)
 **My personal resume in a website**
 
 This is a web-based version of my resume done primarily because I find it

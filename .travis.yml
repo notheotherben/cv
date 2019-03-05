@@ -4,5 +4,16 @@ language: node_js
 services:
   - docker
 
+before_build:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
 script:
   - docker build -t spartan563/cv:latest .
+
+deploy:
+  provider: script
+  script:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker push spartan563/cv:latest
+  on:
+    branch: master
