@@ -14,4 +14,4 @@ deploy:
   provider: script
   script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push spartan563/cv:latest
   on:
-    branch: master
+    branch: main
