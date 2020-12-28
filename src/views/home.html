@@ -3,7 +3,10 @@
         <el-col :xs="24" :sm="11" :md="9" :lg="7">
             <div class="details">
                 <div class="details-img">
-                    <img src="/resources/avatar.jpg">
+                    <picture>
+                        <source srcset="/resources/avatar.webp" type="image/webp"/>
+                        <img src="/resources/avatar.jpg" alt="A picture of Ben kneeling in front of a fountain." width="200" height="200">
+                    </picture>
                 </div>
 
                 <div class="details-name">
@@ -48,10 +51,9 @@
                         <a href="mailto:benjamin@pannell.dev">benjamin@pannell.dev</a>
                     </p>
 
-                    <a href="https://www.linkedin.com/in/benjaminpannell/" target="_blank"><i
+                    <a href="https://www.linkedin.com/in/benjaminpannell/" target="_blank" rel="noreferrer" alt="A link to Benjamin Pannell's LinkedIn profile page."><i
                             class="icon-linkedin"></i></a>
-                    <a href="https://github.com/notheotherben" target="_blank"><i class="icon-github"></i></a>
-                    <a href="https://www.facebook.com/sierra563" target="_blank"><i class="icon-facebook"></i></a>
+                    <a href="https://github.com/notheotherben" target="_blank" rel="noreferrer" alt="A link to Benjamin Pannell's GitHub profile page."><i class="icon-github"></i></a>
                 </div>
             </div>
         </el-col>

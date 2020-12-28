@@ -4,56 +4,97 @@ window.process = {
     }
 }
 
+
+const isDebug = window.location.hostname === "localhost";
+const debugSuffix = isDebug ? "" : ".min"
+
 require.config({
     paths: {
-        "vue-module": "from-cdn",
-        "vuex": "from-cdn",
-        "vue-router-module": "from-cdn",
-        "element-ui": "from-cdn",
-        "vue-class-component": "https://cdn.jsdelivr.net/npm/vue-class-component@6.1.2/dist/vue-class-component.min",
-
-        "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min",
-        "markdown-it": "https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.1/markdown-it.min",
-        "text": "https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min",
-        "highlight-js": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min"
     },
     map: {
         "*": {
 
         }
     },
-    shim: {
-        "vue-module": {
-            exports: "Vue"
+    packages: [
+        {
+            name: "vue-module",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12",
+            main: "vue" + debugSuffix
         },
-        "vue-router-module": {
-            exports: "VueRouter"
+        {
+            name: "vue-router-module",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.4.3",
+            main: "vue-router" + debugSuffix
         },
-        "vuex": {
-            exports: "Vuex"
+        {
+            name: "vuex",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/vuex/3.5.1",
+            main: "vuex" + debugSuffix
         },
-        "element-io": {
-            exports: "ELEMENT"
+        {
+            name: "dayjs",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.34",
+            main: "dayjs.min"
         },
-        "moment": {
-            exports: "moment"
+        {
+            name: "ELEMENT",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.13.2",
+            main: "index"
         },
-        "showdown": {
-            exports: "showdown"
+        {
+            name: "vue-class-component",
+            location: "https://cdn.jsdelivr.net/npm/vue-class-component@7.2.5",
+            main: "dist/vue-class-component" + debugSuffix
+        },
+        {
+            name: "highlight-js",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3",
+            main: "highlight.min"
+        },
+        {
+            name: "markdown-it",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0",
+            main: "markdown-it" + debugSuffix
+        },
+        {
+            name: "text",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12",
+            main: "text" + debugSuffix
         }
+    ],
+    shim: {
+        "ELEMENT": {
+            deps: ["vue"]
+        }
+    },
+    deps: [
+        "vue-module",
+        "vue-router-module",
+        "vuex"
+    ],
+    callback: () => {
+        requirejs(["vue", "ELEMENT", "ELEMENT/locale/en"], (Vue, ElementUI, locale) => {
+            Vue.use(ElementUI, { locale })
+            
+            Sentry.forceLoad()
+            Sentry.onLoad(() => {
+                Sentry.init({
+                    integrations: [new Sentry.Integrations.Vue({ Vue })]
+                })
+            })
+
+            requirejs(["app"], function (app) { })
+        })
     }
 })
 
-define("vue", ["vue-module"], (Vue) => ({ "default": Vue }))
-define("vue-router", ["vue-router-module"], (VueRouter) => ({ "default": VueRouter }))
+define("vue", ["vue-module"], (Vue) => {
+    Vue.default = Vue
+    return Vue
+})
 
-requirejs(["vue", "element-ui"], (Vue, ELEMENT) => {
-    Sentry.forceLoad()
-    Sentry.onLoad(() => {
-        Sentry.init({
-            integrations: [new Sentry.Integrations.Vue({ Vue })]
-        })
-    })
-
-    requirejs(["app"], function (app) { })
+define("vue-router", ["vue-router-module"], (VueRouter) => {
+    VueRouter.default = VueRouter
+    return VueRouter
 })

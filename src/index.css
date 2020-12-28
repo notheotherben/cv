@@ -1,18 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro');
-
 body {
     font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
     overflow: auto;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     margin: 0;
-}
-
-.material-icons {
-    vertical-align: middle;
-    speak: none;
-    line-height: 1;
-    font-size: 1em;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -176,9 +167,18 @@ li {
     align-items: center;
 }
 
-.details-img > img {
+.details-img {
     border-radius: 50%;
     overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.details-img picture,
+.details-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .details-links, .details-links p {
