@@ -20,7 +20,7 @@
         "@types/requirejs": "^2.1.32",
         "browser-sync": "^2.26.14",
         "connect-history-api-fallback": "^1.6.0",
-        "dayjs": "^1.9.1",
+        "dayjs": "^1.10.4",
         "highlight.js": "^10.7.1",
         "typescript": "^4.2.3",
         "vue": "^2.6.12",
