@@ -34,7 +34,7 @@ require.config({
         },
         {
             name: "dayjs",
-            location: "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.34",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4",
             main: "dayjs.min"
         },
         {
