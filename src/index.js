@@ -49,7 +49,7 @@ require.config({
         },
         {
             name: "highlight-js",
-            location: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3",
+            location: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1",
             main: "highlight.min"
         },
         {

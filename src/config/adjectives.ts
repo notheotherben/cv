@@ -5,12 +5,9 @@ export const adjectives: string[] = [
     "Explorer",
     "Adventurer",
     "Pathfinder",
-    "Hiker",
     "Visionary",
     "Mentor",
     "Rescue Diver",
     "Motorcyclist",
-    "Camper",
-    "Gamer",
     "Aspiring Pilot"
 ]
