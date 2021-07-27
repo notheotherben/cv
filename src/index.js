@@ -77,12 +77,12 @@ require.config({
         requirejs(["vue", "ELEMENT", "ELEMENT/locale/en"], (Vue, ElementUI, locale) => {
             Vue.use(ElementUI, { locale })
             
-            if (Sentry)
+            if (window.Sentry)
             {
-                Sentry.forceLoad()
-                Sentry.onLoad(() => {
+                window.Sentry.forceLoad()
+                window.Sentry.onLoad(() => {
                     Sentry.init({
-                        integrations: [new Sentry.Integrations.Vue({ Vue })]
+                        integrations: [new window.Sentry.Integrations.Vue({ Vue })]
                     })
                 })
             }
