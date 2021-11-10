@@ -59,7 +59,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@1.0.4
+        uses: azure/CLI@v1.0.5
         with:
           inlineScript: |
             echo "Uploading Site Contents"
@@ -83,14 +83,14 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@1.0.4
+        uses: azure/CLI@v1.0.5
         with:
           inlineScript: |
             echo "Uploading Site Contents"
             az storage blob sync --container '${{ env.LIVE_STORAGE_CONTAINER }}' --account-name ${{ env.LIVE_STORAGE_ACCOUNT }} --source ./out
 
       - name: Purge Azure CDN
-        uses: azure/CLI@1.0.4
+        uses: azure/CLI@v1.0.5
         with:
           inlineScript: |
             echo "Purging CDN"
