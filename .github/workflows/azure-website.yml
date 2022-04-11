@@ -48,7 +48,7 @@ jobs:
     
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: site
           path: ./out
@@ -72,7 +72,7 @@ jobs:
     
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: site
           path: ./out
