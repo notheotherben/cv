@@ -23,19 +23,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.3.4
+    - uses: actions/checkout@v3.0.2
       with:
         submodules: true
 
     - name: Install Node.js
-      uses: actions/setup-node@v2.4.0
+      uses: actions/setup-node@v3.1.1
     
     - run: npm install
 
     - run: npm run build --if-present
 
     - name: Upload Artifact for Website
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         # Artifact name
         name: site
@@ -48,7 +48,7 @@ jobs:
     
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: site
           path: ./out
@@ -59,7 +59,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@1.0.4
+        uses: azure/CLI@1.0.6
         with:
           inlineScript: |
             echo "Uploading Site Contents"
