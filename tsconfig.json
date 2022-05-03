@@ -14,6 +14,7 @@
         ],
         "outFile": "src/bundle.js",
         "sourceMap": true,
-        "removeComments": true
+        "removeComments": true,
+        "types": ["requirejs"]
     }
 }
