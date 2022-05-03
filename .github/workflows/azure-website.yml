@@ -35,7 +35,7 @@ jobs:
     - run: npm run build --if-present
 
     - name: Upload Artifact for Website
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         # Artifact name
         name: site
@@ -54,7 +54,7 @@ jobs:
           path: ./out
           
       - name: Login to Azure
-        uses: azure/login@v1.3.0
+        uses: azure/login@v1.4.4
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
@@ -78,7 +78,7 @@ jobs:
           path: ./out
           
       - name: Login to Azure
-        uses: azure/login@v1.3.0
+        uses: azure/login@v1.4.4
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
