@@ -68,9 +68,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          subscription_id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
-          tenant_id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
-          client_id: ${{ env.STAGING_DEPLOYMENT_CLIENT_ID }}
+          subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
+          tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
+          client-id: ${{ env.STAGING_DEPLOYMENT_CLIENT_ID }}
           
       - name: Copy Artifacts to Storage
         uses: azure/CLI@v1
@@ -118,9 +118,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          subscription_id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
-          tenant_id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
-          client_id: ${{ env.LIVE_DEPLOYMENT_CLIENT_ID }}
+          subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
+          tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
+          client-id: ${{ env.LIVE_DEPLOYMENT_CLIENT_ID }}
           
       - name: Copy Artifacts to Storage
         uses: azure/CLI@v1
