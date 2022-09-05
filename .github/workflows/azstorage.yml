@@ -21,6 +21,8 @@ env:
   LIVE_CDN_PROFILE: "cdn-resume-bpannell"
   LIVE_CDN_ENDPOINT: "resumebpannell"
   
+permissions:
+  id-token: write
 
 jobs:
   build:
