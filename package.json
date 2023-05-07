@@ -21,7 +21,7 @@
         "browser-sync": "^2.29.1",
         "connect-history-api-fallback": "^2.0.0",
         "dayjs": "^1.11.7",
-        "highlight.js": "^11.7.0",
+        "highlight.js": "^11.8.0",
         "typescript": "^5.0.3",
         "vue": "^2.7.14",
         "vue-class-component": "^7.2.6",
