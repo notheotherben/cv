@@ -20,10 +20,6 @@ env:
   LIVE_CDN_RESOURCEGROUP: app-resume
   LIVE_CDN_PROFILE: "cdn-resume-bpannell"
   LIVE_CDN_ENDPOINT: "resumebpannell"
-  
-permissions:
-  id-token: write
-  pages: write
 
 jobs:
   build:
@@ -32,8 +28,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3.5.2
-      with:
-        submodules: true
+
+    - name: cache ~/.cargo
+      uses: Swatinem/rust-cache@v2
 
     - name: Install rust with wasm target
       uses: actions-rs/toolchain@v1
@@ -96,9 +93,9 @@ jobs:
     needs: [build]
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
 
-    environment:
-      name: Staging
-      url: https://cv-staging.sierrasoftworks.com
+    permissions:
+      pull-requests: write
+      checks: write
 
     steps:
       - name: Download Artifacts for Website
@@ -127,6 +124,10 @@ jobs:
     environment:
       name: Production
       url: https://cv.sierrasoftworks.com
+
+    permissions:
+      id-token: write
+      pages: write
     
     steps:
       - name: Download Artifacts for Website
