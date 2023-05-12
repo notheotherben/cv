@@ -1,0 +1,20 @@
+[package]
+name = "notheotherben"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+futures = "0.3"
+gloo-timers = { version = "0.2.6", features = ["futures"] }
+markdown = "1.0.0-alpha.9"
+rust-embed = { version = "6.6.1", features = ["debug-embed", "include-exclude"] }
+serde = { version = "1.0.163", features = ["alloc", "derive"] }
+serde_yaml = "0.9.21"
+wasm-bindgen-futures = "0.4"
+yew = { version = "0.20.0", features = ["csr"] }
+
+[profile.release]
+panic = 'abort'
+codegen-units = 1
+opt-level = 'z'
+lto = true

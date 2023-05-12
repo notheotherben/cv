@@ -1,0 +1,194 @@
+name: Benjamin Pannell
+role: Principal SRE
+
+adjectives:
+  - Engineer
+  - Leader
+  - Aspiring Pilot
+  - Developer
+  - Innovator
+  - Motorcyclist
+  - Sponsor
+  - Minimalist
+  - Adventurer
+  - Pathfinder
+  - Visionary
+  - Mentor
+  - Explorer
+  - Rescue Diver
+
+details:
+  Company: Microsoft
+  Citizenship: Irish and South African
+
+avatar:
+  alt-text: A picture of Ben kneeling in front of a water fountain, looking at the camera.
+
+contact:
+  - kind: text
+    url: mailto:benjamin@pannell.dev
+    text: benjamin@pannell.dev
+  - kind: github
+    url: https://github.com/notheotherben
+    text: A link to Ben's personal GitHub profile.
+  - kind: linkedin
+    url: https://www.linkedin.com/in/benjaminpannell
+    text: A link to Ben's personal LinkedIn profile.
+
+biography:
+  short: |
+    I'm a Principal SRE who is passionate about the design, development, and operation of complex, business critical services at scale.
+
+  long: |
+    I'm currently a Principal Site Reliability engineer at [Microsoft](https://www.microsoft.com), and the technical lead for Azure's Control Plane SRE team. Over the last 4+ years, I've worked
+    alongside a number of industry veterans to help shape both this team and the way that SRE works at Microsoft, culminating in a 10x improvement in
+    reliability in the face of a 10x increase in traffic, and we're just getting started.
+
+    I've spent the last decade building and maintaining customer facing apps and services, including everything from C#/C++ desktop applications, to realtime GIS
+    data analytics platforms for agricultural fleet tracking, the backend monitoring platform for one of the world's largest gaming franchises, and most recently
+    the control plane for the world's second largest cloud. This has required a wide range of skills, both technical and non-technical, and you'll find that I'm
+    highly experienced in a diverse range of technologies, system architectures, organizational structures, and leadership roles. I've worn the hat of a "pure"
+    software engineer, a "pure" operations engineer, and the nuanced middle-ground that is Site Reliability Engineering on some of the world's largest platforms;
+    all while supporting, mentoring, and sponsoring the growth of those around me.
+
+    Outside of my core work responsibilities, I have also spent over a decade and a half building and maintaining open source software and projects (which you'll
+    find under my [Sierra Softworks](https://github.com/SierraSoftworks) organization on GitHub) and this has afforded me the opportunity to experiment with, and
+    gain experience in, a significant range of technologies and approaches that have then gone on to inform solutions in my professional career. I'm also an avid
+    sim-aviator, and when the Irish weather permits (or even if it doesn't) you'll often find me adventure motorcycling in the mountains.
+
+    ### What I'm passionate about
+    At the heart of it, I'm a systems thinker. I want to understand the interactions between every actor in a system and the impact that their actions have on the
+    eventual outcome. It's impossible to consider the behaviour of systems without also considering the humans that participate in those same systems, and the
+    intersection between technology and people has been my passion since I "shipped" my first "customer facing" application (a game launcher used by my friends
+    at high school). This same obsession has led me to obsess over how we design and implement systems that support the success of people, viewing every failure
+    as an opportunity to improve resiliency.
+
+    I also recognize that nobody has all the answers, and in many cases nobody has all of the right questions yet either. Sometimes, the best way forward is to
+    take a step and measure the results. This has turned into my second passion, namely how we increase the intrinsic velocity within our systems and simultaneously
+    improve our ability to observe (or predict) the outcomes to enable informed decision making. I routinely write about my experiences in these areas and several others,
+    and if you're curious to learn more about what I feel strongly about and how I think about these problems, [that's a good place to start](https://blog.sierrasoftworks.com).
+
+roles:
+  - organization: Microsoft
+    role: Principal SRE
+    location: Dublin, Ireland
+    start-date: January 2019
+    description:
+      short: |
+        I am the technical lead for Azure's Control Plane SRE team, where we have delivered an order of magnitude improvement in reliability
+        while scaling to support an order of magnitude increase in load over the last 4 years.
+      
+      long: |
+        I've been working as an SRE on Azure's Control Plane SRE team since 2019, with a role that has evolved from Senior SRE, to Technical Lead, and now
+        Principal SRE. Over the course of this time, I've helped mentor and support an exceptional team of engineers who have made substantial technical
+        contributions to the reliability of Microsoft's Azure control plane services, most notably [Azure Resource Manager (ARM)][ARM].
+
+        As a Principal SRE, I am responsible for both the technical direction of the Control Plane SRE team, as well as coordinating and executing on
+        broad organization-level programmes to improve the reliability of Azure's global control plane and cloud services. I have also been responsible
+        for a number of foundational improvements to [ARM][ARM] which have reduced change and deployment cycle times by over 80%, while improving the
+        reliability of the service by over 10x in the face of a 10x increase in traffic.
+
+        [ARM]: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview "Azure Resource Manager"
+    impact:
+      - "**10x improvement in reliability** of Azure Resource Manager in the face of a 10x increase in traffic."
+      - "**80% reduction in change cycle time** for Azure Resource Manager."
+      - "**90% reduction in monitoring noise** for through a migration to customer journey and synthetic monitoring."
+      - "**<4% annual team attrition** through a focus on team culture, autonomy, and growing our engineers."
+
+  - organization: Demonware
+    role: SRE
+    location: Dublin, Ireland
+    start-date: September 2016
+    end-date: January 2019
+    description:
+      short: |
+        I worked as a Site Reliability Engineer on Demonware's Monitoring team, where I was responsible for developing and rolling out a next generation
+        monitoring platform that went on to remove the need for a 24/7/365 Network Operations Center.
+
+      long: |
+        Demonware is responsible for the backend online services used by Call of Duty and several other major online game franchises. As an SRE on their
+        Monitoring team, I was responsible for the development and rollout of an integrated monitoring platform that both replaced Nagios/CheckMK, as well
+        as replacing the need for a 24/7/365 Network Operations Center (NOC) by providing a self-service platform for engineers to monitor their own services
+        with low noise, high actionability, and the ability to dynamically manage suppression of alerts during maintenance windows and/or deployments. This
+        effort consisted of over 30 distinct components and I contributed hundreds of thousands of lines of code, delivering an event driven alerting platform
+        that delivered state of the art capabilities at the time.
+
+        I also helped mentor several more junior engineers, and worked to develop a platform which outlasted not just my own tenure, but that of the entire
+        Monitoring team. This platform, and many of its components, are still in use today (over 5 years later) and continue to deliver value for the
+        organization with minimal maintenance.
+    impact:
+      - "**Removed the need for a 24/7/365 NOC** by providing a self-service monitoring platform used across the organization."
+      - "**Built a state of the art monitoring platform** which is still in use today, over 5 years later."
+      - "**99.5% reduction in alert volume** by implementing a clear monitoring strategy and developing the tooling to support it."
+
+  - organization: EMSS Consulting (Pty) Ltd
+    role: Software Engineer
+    location: Stellenbosch, South Africa
+    start-date: January 2015
+    end-date: September 2016
+    description:
+      short: |
+        I managed a 10 year old legacy codebase, built a low-level USB communication library in C++ and lead the development of a complex realtime data analytics platform
+        which enabled farmers to track their crop spraying operations in real time, saving them hundreds of thousands of rands every year.
+
+      long: |
+        As a software engineer at EMSS Consulting, I was responsible for a diverse range of products and projects - spanning the gamut from backend online
+        services used by Cellular carriers to evaluate the safety of their cell installations, to a low-level USB communication library written in C++ (and
+        accompanying user interface) for a personal radiation exposure monitor, and the ground up development of a realtime GIS platform providing data analytics
+        for farmers conducting crop spraying operations.
+
+        With the exception of my work on [IXUS](https://ixusapp.com/), all of these projects were ground up developments which I was responsible for designing,
+        implementing, testing, and delivering - often on extremely condensed timelines and with little oversight or support. My favourite project in this case
+        was [Farmtrack](https://farmtracksa.com), a combination of a single-page web application and a backend API which continues to operate over 8 years after
+        I delivered it, with minimal maintenance.
+    impact:
+      - "**Built a [realtime GIS platform](https://farmtracksa.com)** for farmers to track their crop spraying operations, including the frontend, backend,
+        and infrastructure management. This platform is still used today, with minimal changes, over 8 years later."
+      - "**Developed a low-level USB communication library** and accompanying user interface in C++ for a [personal radiation exposure monitor](https://fieldsense.com/).
+        This software is still used today, with minimal changes, over 8 years later."
+      - "**Migrated the organization from a legacy SCM platform to GitLab** and trained the team on how to use it effectively, significantly reducing complexity and ramp-up time for new hires."
+      - "**99.6% reduction in cell tower import duration** through optimized software architecture and database design."
+
+  - organization: Sierra Softworks
+    role: Founder
+    location: My personal company
+    start-date: "2008"
+    description:
+      short: |
+        Sierra Softworks is the nom de guerre that I use for personal projects, and has been the banner under which I have released over 200 different open
+        source projects since I first started using it in 2008. You can view this list [on GitHub](https://github.com/SierraSoftworks).
+      long: |
+        <noprint>
+
+        I have been writing, and running, software in production for over two decades now and one of the greatest contributors to my success has been
+        the open source community. As a result, I've always tried to contribute back wherever I can - whether that be through contributions to the libraries
+        and tools I use on a daily basis, or by releasing the tools I build myself in the hopes that others may gain some value from them.
+
+        Over the years, several of my projects have gained traction with users, and I've been fortunate enough to have had the opportunity to work directly
+        with these "customers" to understand the issues they face and how to resolve them. It is this very feedback loop which first introduced me to the
+        imperative need to monitor your software in production, and which has consistently driven me to build tools that support the software development
+        lifecycle. That continues today with my professional work as a Site Reliability Engineer, but you'll still see me building new things in this space.
+
+    impact:
+      - "**A [development workspace management tool](https://git-tool.sierrasoftworks.com)** which simplifies the management of multiple Git repositories."
+      - "**A structured [road map](https://roadmap.sierrasoftworks.com/) tool** which simplifies the authoring and sharing of a team's road map in a consistent manner."
+      - "**A constraint-based [on-call schedule generator](https://github.com/SierraSoftworks/on-call)** to simplify the fair distribution of on-call duties across a team."
+      - "**An OpenTelemetry-native [synthetic monitoring](https://github.com/SierraSoftworks/grey) tool** designed to provide lightweight external monitoring of the health of your services."
+
+  - organization: Stellenbosch University
+    role: BEng (Hons) Electrical Engineering
+    location: Stellenbosch, South Africa
+    start-date: January 2011
+    end-date: November 2014
+    description:
+      short: |
+        I received my honours in Electrical and Electronic Engineering, specializing in embedded systems. I also did a lot of work outside the classroom writing software, everything from Lua on the .NET Runtime
+        to a web based Zombie game and even managed to land a [pretty unique phone from Nokia](https://en.wikipedia.org/wiki/Nokia_N950) (one of two in South Africa).
+      long: |
+        While my primary focus during the 4 years I spent at Stellenbosch University was an Electrical Engineering degree, I spent a substantial amount of
+        my time designing, building, and running software. With every project, my aim was to develop a new skill and this approach of "solve the problem,
+        but add one hard challenge" allowed me to gain broad exposure to a wide range of technologies and techniques.
+    impact:
+      - "**A [Lua runtime for the .NET Framework](https://github.com/notheotherben/IronLua)** which introduced me to the complexities of implementing a real world
+        language, including debugger support, on top of a modern virtual machine."
+      - "**A federated authentication platform** which powered several other projects, including a game played across several campus residences with several hundred users."

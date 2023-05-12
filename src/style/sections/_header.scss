@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    height: 90px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-bottom: 1px solid;
+    border-color: var(--theme-header-shadow);
+    transition: border-color 0.2s linear;
+
+    @media print {
+        page-break-after: avoid;
+    }
+
+    h1 {
+        font-size: 24px;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .subtitle {
+        display: block;
+        font-size: 1em;
+        margin: 0 0.8em;
+        opacity: 0.7;
+    }
+}

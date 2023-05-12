@@ -1,0 +1,20 @@
+figure.quote {
+    margin: 20px;
+
+    blockquote {
+        margin: 0;
+        position: relative;
+    }
+
+    figcaption {
+        margin-left: 0.5em;
+        font-size: 0.8em;
+        font-weight: 600;
+
+        &::before {
+            display: inline;
+            content: "\2014";
+            padding-right: 0.5em;
+        }
+    }
+}
