@@ -175,9 +175,9 @@ jobs:
             az cdn endpoint purge -g ${{ env.LIVE_CDN_RESOURCEGROUP }} -n ${{ env.LIVE_CDN_ENDPOINT }} --profile-name ${{ env.LIVE_CDN_PROFILE }} --content-paths '/*'
   
   deploy-docker:
-
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
+    needs: [build]
 
     steps:
       - name: Download Artifacts for Website
