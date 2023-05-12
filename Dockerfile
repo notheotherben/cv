@@ -1,8 +1,11 @@
-FROM rust:slim-buster
+FROM rust:slim-bookworm
 
-RUN apt-get update && apt-get install -y build-essential pkg-config libssl-dev
+ARG TRUNK_VERSION=0.16.0
 
-RUN cargo install --locked trunk wasm-bindgen-cli
+RUN apt-get update && apt-get install -y build-essential pkg-config libssl-dev wget
+
+# Install trunk to enable builds
+RUN wget -qO- https://github.com/thedodd/trunk/releases/download/v${TRUNK_VERSION}/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf - -C /usr/local/bin
 
 RUN rustup target add wasm32-unknown-unknown
 
@@ -21,7 +24,7 @@ ADD ./assets /app/assets
 ADD ./index.html /app/index.html
 
 # Build the actual project in release configuration
-RUN ls /app/ /app/src/ /app/src/style/ && trunk build --release
+RUN trunk build --release
 
 FROM caddy:alpine
 
