@@ -1,4 +1,4 @@
-name: Publish Website
+name: Website
 
 on:
   push:
@@ -25,6 +25,7 @@ env:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
 
@@ -54,6 +55,7 @@ jobs:
         path: ./dist
 
   deploy-staging:
+    name: Deploy Staging (CDN)
     runs-on: ubuntu-latest
     needs: [build]
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -94,6 +96,7 @@ jobs:
             az cdn endpoint purge -g ${{ env.STAGING_CDN_RESOURCEGROUP }} -n ${{ env.STAGING_CDN_ENDPOINT }} --profile-name ${{ env.STAGING_CDN_PROFILE }} --content-paths '/*'
   
   deploy-static-web-app:
+    name: Deploy Static Web App
     runs-on: ubuntu-latest
     needs: [build]
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -122,6 +125,7 @@ jobs:
           skip_api_build: "true"
 
   deploy-live:
+    name: Deploy Live (CDN)
     runs-on: ubuntu-latest
     needs: [build, deploy-staging]
     if: github.event_name == 'push'
@@ -175,6 +179,7 @@ jobs:
             az cdn endpoint purge -g ${{ env.LIVE_CDN_RESOURCEGROUP }} -n ${{ env.LIVE_CDN_ENDPOINT }} --profile-name ${{ env.LIVE_CDN_PROFILE }} --content-paths '/*'
   
   deploy-docker:
+    name: Deploy Docker Image
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     needs: [build]
@@ -220,6 +225,7 @@ jobs:
 
 
   cleanup-static-web-app:
+    name: Cleanup Static Web App (PR)
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
 
