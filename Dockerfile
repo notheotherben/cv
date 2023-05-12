@@ -1,19 +1,28 @@
-FROM node:alpine
+FROM rust:slim-buster
 
-ADD . /app
+RUN apt-get update && apt-get install -y build-essential pkg-config libssl-dev
+
+RUN cargo install --locked trunk wasm-bindgen-cli
+
+RUN rustup target add wasm32-unknown-unknown
+
+ADD ./Cargo.toml /app/Cargo.toml
+ADD ./Cargo.lock /app/Cargo.lock
 
 WORKDIR /app
-RUN ["npm", "install"]
-RUN ["npm", "run", "build"]
 
-FROM nginx:alpine
+# Run the cargo build once to download all the dependencies
+RUN trunk build --release || true
 
-ARG VERSION=1.0.0
-LABEL version=$VERSION
+RUN rm -rf src
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+ADD ./src /app/src
+ADD ./assets /app/assets
+ADD ./index.html /app/index.html
 
-ADD src /app
+# Build the actual project in release configuration
+RUN ls /app/ /app/src/ /app/src/style/ && trunk build --release
 
-# Add the compiled bundle
-COPY --from=0 /app/src/bundle.js /app
+FROM caddy:alpine
+
+COPY --from=0 /app/dist /usr/share/caddy

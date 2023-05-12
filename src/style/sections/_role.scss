@@ -1,0 +1,82 @@
+.role {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    max-width: 1920px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+    }
+
+    @media print {
+        padding: 0.5rem 1rem;
+        page-break-inside: avoid;
+    }
+
+    .role-summary {
+        flex: 1;
+        margin: 0 2rem;
+
+        @media print {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: start;
+            flex-wrap: wrap;
+
+            hgroup,
+            address {
+                flex: 1;
+            }
+
+            address {
+                text-align: right;
+                margin-top: 1.4rem;
+            }
+
+            .tldr {
+                width: 100%;
+            }
+        }
+    }
+
+    .role-details {
+        flex: 2;
+        margin: 0 2rem;
+
+        .role-description {
+            @media print {
+                display: none;
+            }
+        }
+
+    }
+}
+
+.tldr {
+    margin: 2rem 1rem;
+    font-size: 0.9rem;
+
+    @media print {
+        font-size: 1rem;
+    }
+
+    &::before {
+        display: block;
+        content: "“TL;DR„";
+        font-weight: 800;
+        opacity: 0.5;
+        margin-left: -1rem;
+        font-size: 0.8rem;
+        alt: "Too long; didn't read";
+    }
+    
+    p {
+        margin: 0.2rem 0.5rem;
+    }
+}

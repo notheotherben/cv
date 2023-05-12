@@ -1,0 +1,13 @@
+.small {
+    font-size: 0.8em;
+
+    &p {
+        margin-top: 0;
+    }
+}
+
+p.subtitle {
+    margin-top: -1em;
+    font-style: italic;
+    opacity: 0.8;
+}

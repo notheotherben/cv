@@ -1,0 +1,21 @@
+:root {
+    --theme-background: #fff;
+    --theme-foreground: #000;
+    --theme-foreground-subtle: #666;
+
+    --theme-link-default: #409eff;
+    --theme-link-active: rgb(29, 93, 161);
+
+    --theme-header-shadow: #e6e6e6;
+
+    @media (prefers-color-scheme: dark) {
+        --theme-background: #202228;
+        --theme-foreground: #bbb;
+        --theme-foreground-subtle: #999;
+    
+        --theme-link-default: #69b4ff;
+        --theme-link-active: #409eff;
+        
+        --theme-header-shadow: #2f2f2f;
+    }
+}

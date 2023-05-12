@@ -1,7 +1,11 @@
 version: 2
 updates:
   - directory: /
-    package-ecosystem: npm
+    package-ecosystem: cargo
+    schedule:
+      interval: daily
+  - directory: /
+    package-ecosystem: docker
     schedule:
       interval: daily
   - directory: /

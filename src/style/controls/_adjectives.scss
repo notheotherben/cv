@@ -1,0 +1,74 @@
+$separator-padding: 0.7rem;
+
+div.adjectives {
+    display: inline-block;
+    height: 2rem;
+    line-height: 1.7rem;
+    vertical-align: middle;
+    position: relative;
+    overflow: visible;
+    width: 150px;
+    margin: 0.2em;
+
+    margin-left: $separator-padding;
+    border-left: 1px solid;
+    border-color: var(--theme-header-shadow);
+    transition: border-color 0.2s linear;
+
+    @media print {
+        width: 80px;
+
+        &::before {
+            display: inline-block;
+            content: "Leader";
+            position: absolute;
+            top: 0;
+            left: $separator-padding;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    @media ((not(print)) and (max-width: 720px)) {
+        display: none;
+    }
+    
+    :not(&.adjectives-flipped) {
+        .adjectives-entry--first {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+
+        .adjectives-entry--second {
+            transform: translateY(100%);    
+            opacity: 0;    
+        }
+    }
+
+    &.adjectives--flipped {
+        .adjectives-entry--first {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .adjectives-entry--second {
+            transform: translateY(0%);
+            opacity: 1;    
+        }
+    }
+}
+
+.adjectives-entry {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: $separator-padding;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-50%);
+    transition: 0.5s ease opacity, 0.7s ease transform;
+
+    @media print {
+        display: none;
+    }
+}

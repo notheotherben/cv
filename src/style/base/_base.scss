@@ -1,0 +1,81 @@
+@import 'colours';
+
+@page {
+	margin: 0.01in;
+}
+
+body {
+    font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    overflow: auto;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+	background-color: var(--theme-background);
+	color: var(--theme-foreground);
+	transition: color 0.2s linear, background-color 0.2s linear;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+p {
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: var(--theme-link-default);
+    transition: color 0.2s linear;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--theme-link-active);
+	}
+
+	@media print {
+		color: #000;
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--theme-foreground);
+		}
+
+		&::after {
+			display: inline;
+			content: " (" attr(href) ")";
+			font-size: 0.8rem;
+			padding: 0.1rem 0;
+		}
+	}
+}
+
+dl {
+	dt {
+		width: 30%;
+		display: inline-block;
+		text-align: right;
+		font-weight: bold;
+
+		@media print {
+			min-width: calc(50% - 2.5rem);
+		}
+	}
+
+	dd {
+		display: inline-block;
+		text-align: left;
+		margin: 0.1rem 0.5rem;
+		min-width: calc(70% - 5rem);
+
+		@media print {
+			min-width: calc(50% - 2.5rem);
+		}
+	}
+}
+
+li {
+    margin: 0.3rem auto;
+}
