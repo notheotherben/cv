@@ -66,7 +66,7 @@ impl Component for Adjectives {
         let delay_millis = self.delay_millis;
 
         ctx.link().send_future(async move {
-            gloo_timers::future::sleep(Duration::from_millis(delay_millis)).await;
+            gloo::timers::future::sleep(Duration::from_millis(delay_millis)).await;
         });
 
         true

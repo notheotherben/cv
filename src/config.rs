@@ -12,6 +12,8 @@ pub struct Config {
     pub name: String,
     pub role: String,
 
+    pub tracking: TrackingConfig,
+
     pub adjectives: Vec<String>,
 
     pub details: HashMap<String, String>,
@@ -28,6 +30,13 @@ impl Default for Config {
         let file = ConfigFile::get("config.yml").unwrap();
         serde_yaml::from_slice(&file.data).unwrap()
     }
+}
+
+#[derive(Clone, Deserialize, Serialize)]
+pub struct TrackingConfig {
+    #[serde(rename = "google-analytics")]
+    pub google_analytics: Option<String>,
+    pub sentry: Option<String>,
 }
 
 #[derive(Clone, Deserialize, Serialize)]

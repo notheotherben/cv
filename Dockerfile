@@ -2,7 +2,7 @@ FROM rust:slim-bookworm
 
 ARG TRUNK_VERSION=0.16.0
 
-RUN apt-get update && apt-get install -y build-essential pkg-config libssl-dev wget
+RUN apt-get update && apt-get install -y build-essential pkg-config libssl-dev wget git
 
 # Install trunk to enable builds
 RUN wget -qO- https://github.com/thedodd/trunk/releases/download/v${TRUNK_VERSION}/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf - -C /usr/local/bin
@@ -19,6 +19,7 @@ RUN trunk build --release || true
 
 RUN rm -rf src
 
+ADD ./build.rs /app/build.rs
 ADD ./src /app/src
 ADD ./assets /app/assets
 ADD ./index.html /app/index.html

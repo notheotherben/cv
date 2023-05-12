@@ -2,6 +2,7 @@ use yew::prelude::*;
 
 mod config;
 mod controls;
+mod plugins;
 mod sections;
 
 use config::Config;
@@ -12,6 +13,14 @@ fn App() -> Html {
 
     html! {
         <>
+            if let Some(google_analytics) = config.tracking.google_analytics.as_ref() {
+                <plugins::GoogleAnalytics tracking_id={google_analytics.clone()}/>
+            }
+
+            if let Some(sentry) = config.tracking.sentry.as_ref() {
+                <plugins::Sentry dsn_key={sentry.clone()}/>
+            }
+
             <sections::Header ..sections::HeaderProps::from(&config)/>
 
             <main>
