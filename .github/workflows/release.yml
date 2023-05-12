@@ -217,7 +217,7 @@ jobs:
           
       - name: Push image to Docker Hub
         run: |
-          IMAGE_ID=${{ env.IMAGE }}
+          IMAGE_ID=${{ env.DOCKER_IMAGE }}
           echo IMAGE_ID=$IMAGE_ID
           docker tag image $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
