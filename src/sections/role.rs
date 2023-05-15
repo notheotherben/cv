@@ -46,18 +46,18 @@ pub fn Role(props: &RoleProps) -> Html {
                 </hgroup>
 
                 <address>
-                    <strong>{props.role.clone()}</strong>
+                    <strong>{&props.role}</strong>
                     <br/>
-                    {props.location.clone()}
+                    {&props.location}
                 </address>
 
-                <controls::Tldr content={props.tldr.clone()}/>
+                <controls::Tldr content={&props.tldr}/>
             </div>
 
             <div class="role-details">
                 <div class="role-description">
                     <h4>{if props.end_date.is_some() { format!("What I did at {}", props.organization) } else { format!("What I do at {}", props.organization) }}</h4>
-                    <controls::Markdown content={props.description.clone()}/>
+                    <controls::Markdown content={&props.description}/>
                 </div>
 
                 <div class="role-impact">

@@ -32,7 +32,7 @@ pub fn Header(props: &HeaderProps) -> Html {
         <header>
             <hgroup>
                 <h1>
-                    {props.name.clone()}
+                    {&props.name}
                 </h1>
                 <span class="subtitle">
                     {"Curriculum Vitae"}
@@ -40,7 +40,7 @@ pub fn Header(props: &HeaderProps) -> Html {
             </hgroup>
 
             <div>
-                {props.role.clone()}
+                {&props.role}
                 <controls::Adjectives adjectives={props.adjectives.clone()}/>
             </div>
         </header>

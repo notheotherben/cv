@@ -33,10 +33,12 @@ fn App() -> Html {
                         }
                     }).collect::<Html>()
                 }
+
+                <sections::LookingFor ..sections::LookingForProps::from(&config)/>
             </main>
 
             <footer>
-                <controls::Quote author="USAF SR-71 Base - Kadena, Japan" quote="As I fly through the valley of the shadow of death, I shall fear no evil. For I am at 80,000 feet and climbing."/>
+                <controls::Quotes ..controls::QuotesProps::from(&config)/>
             </footer>
         </>
     }

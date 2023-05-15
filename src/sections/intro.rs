@@ -66,13 +66,13 @@ impl From<&crate::config::ContactConfig> for IntroSocialLink {
 pub fn Details(props: &IntroProps) -> Html {
     html! {
         <div class="intro-details">
-            <controls::Picture url="/assets/avatar.jpg" alt_text={props.avatar_alt_text.clone()} sources={vec![
+            <controls::Picture url="/assets/avatar.jpg" alt_text={&props.avatar_alt_text} sources={vec![
                 controls::PictureSource { src_set: "/assets/avatar.webp".into(), mime_type: "image/webp".into() }
             ]} width={200} height={200} />
 
             <h2>{"Benjamin Pannell"}</h2>
 
-            <controls::Markdown content={props.short_bio.clone()}/>
+            <controls::Markdown content={&props.short_bio}/>
 
             <dl>
                 {
@@ -95,8 +95,8 @@ pub fn Details(props: &IntroProps) -> Html {
                             html! {
                                 <>
                                     <br/>
-                                    <a href={link.url.clone()} target="_blank" rel="noreferrer" data-kind={link.kind.clone()}>
-                                        {link.text.clone()}
+                                    <a href={&link.url} target="_blank" rel="noreferrer" data-kind={&link.kind}>
+                                        {&link.text}
                                     </a>
                                 </>
                             }
@@ -107,7 +107,7 @@ pub fn Details(props: &IntroProps) -> Html {
                 {
                     props.social_links.iter().filter(|link| link.kind != "text").map(|link| {
                         html! {
-                            <a href={link.url.clone()} target="_blank" rel="noreferrer" alt={link.text.clone()} data-kind={link.kind.clone()}>
+                            <a href={link.url.clone()} target="_blank" rel="noreferrer" alt={&link.text} data-kind={&link.kind}>
                                 <i class={format!("icon-{}", link.kind)}/>
                             </a>
                         }
@@ -127,7 +127,7 @@ pub fn Introduction(props: &IntroProps) -> Html {
                 <p class="subtitle">{"A quick showcase of who I am and what I do."}</p>
             </hgroup>
 
-            <controls::Markdown content={props.long_bio.clone()}/>
+            <controls::Markdown content={&props.long_bio}/>
         </div>
     }
 }

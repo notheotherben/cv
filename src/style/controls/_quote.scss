@@ -18,3 +18,56 @@ figure.quote {
         }
     }
 }
+
+div.quotes {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0.2em;
+
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+
+    @media print {
+        display: none
+    }
+
+    @media ((not(print)) and (max-width: 720px)) {
+        display: none;
+    }
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        transition: 0.3s linear opacity, 0.7s ease transform;
+    
+        @media print {
+            display: none;
+        }
+
+        &:first-of-type {
+            transform: translateY(-100%);
+            opacity: 0;
+    
+            &.active {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+    
+        &:last-of-type {
+            transform: translateY(100%);    
+            opacity: 0;
+     
+            &.active {
+                transform: translateY(0%);
+                opacity: 1;   
+            }
+        }
+    }
+}

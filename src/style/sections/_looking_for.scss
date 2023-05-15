@@ -1,0 +1,27 @@
+.looking-for {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    
+    max-width: 1920px;
+    @media (max-width: 1200px) {
+        flex-direction: column;
+    }
+
+    @media print {
+        padding: 0.5rem 1rem;
+        page-break-inside: avoid;
+    }
+
+    &>h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    &>div {
+        margin: 1rem 2rem;
+        flex: 1;
+    }
+}

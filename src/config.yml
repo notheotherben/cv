@@ -21,6 +21,22 @@ adjectives:
   - Explorer
   - Rescue Diver
 
+quotes:
+  - author: USAF SR-71 Base - Kadena, Japan
+    quote: As I fly through the valley of the shadow of death, I shall fear no evil. For I am at 80,000 feet and climbing.
+  - author: Nelson Mandela
+    quote: It is in the character of growth that we should learn from both pleasant and unpleasant experiences.
+  - author: Mahatma Gandhi
+    quote: Be the change you wish to see in the world.
+  - author: Mark Twain
+    quote: Whenever you find yourself on the side of the majority, it is time to reform (or pause and reflect).
+  - author: Nelson Mandela
+    quote: I like friends who have independent minds because they tend to make you see problems from all angles.
+  - author: Marcus Aurelius
+    quote: Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
+  - author: Albert Einstein
+    quote: We cannot solve problems with the kind of thinking we employed when we came up with them.
+
 details:
   Company: Microsoft
   Citizenship: Irish and South African
@@ -180,7 +196,7 @@ roles:
       - "**An OpenTelemetry-native [synthetic monitoring](https://github.com/SierraSoftworks/grey) tool** designed to provide lightweight external monitoring of the health of your services."
 
   - organization: Stellenbosch University
-    role: BEng (Hons) Electrical Engineering
+    role: BEng (Hons) Electrical & Electronic
     location: Stellenbosch, South Africa
     start-date: January 2011
     end-date: November 2014
@@ -196,3 +212,33 @@ roles:
       - "**A [Lua runtime for the .NET Framework](https://github.com/notheotherben/IronLua)** which introduced me to the complexities of implementing a real world
         language, including debugger support, on top of a modern virtual machine."
       - "**A federated authentication platform** which powered several other projects, including a game played across several campus residences with several hundred users."
+
+looking-for:
+  - short: An Opportunity for Impact
+    long: |
+      I strongly believe that as a professional engineer, I have a responsibility to deliver value to the organization I work for, and to the world at large.
+      As my employer, you're effectively paying for my time with the intention of paying me to solve problems for you. The best way for us to both achieve
+      what we're looking for is to ensure that I'm placed in a position where I am able to work on the most important problems facing your organization, and
+      given the resources and autonomy necessary to solve them.
+
+      If you're interested in having me join your team, I'd love to hear about what your largest challenges are and how you're planning to invest in solving them.
+
+  - short: A Team of (Empathetic) Experts
+    long: |
+      I've been incredibly fortunate over my career, having had the opportunity to work with some of the most talented people in the industry. Over those years,
+      I've seen how the right culture, mentorship, and sponsorship can transform a team of motivated individuals into a phenomenal team that is able to tackle
+      organizational challenges which were previously insurmountable. I'm looking for an organization which recognizes the same, prioritizes the development of
+      their people, and puts empathy and dignity at the forefront of what they do.
+
+      If that sounds like the culture you're looking to foster, I'd love to hear more about the incentives you've put in place to encourage it.
+
+  - short: Workplace Equality and Equity
+    long: |
+      We work in an industry which is fundamentally unequal and un-equitable towards the majority of people on this planet. In my years of experience,
+      some of the best engineers I've ever worked with are those who buck the trend and are able to bring their authentic selves to work.
+      I'm looking for an organization which not only recognizes the need for diversity, but is taking active steps towards equity in the workplace:
+      hiring diverse perspectives, mentoring and sponsoring others, promoting on objective impact, compensating fairly and transparently, and constantly
+      striving to improve for all.
+
+      If you're looking for me to join your organization, I'd like to hear about what you're doing to ensure not just equal, but equitable opportunities
+      for all demographics.

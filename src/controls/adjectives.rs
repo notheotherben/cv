@@ -23,31 +23,14 @@ impl Component for Adjectives {
     type Message = ();
     type Properties = AdjectiveProps;
 
-    fn create(_ctx: &Context<Self>) -> Self {
+    fn create(ctx: &Context<Self>) -> Self {
         Self {
             index: 0,
-            flipped: false,
+            flipped: true,
             delay_millis: 2000,
-            first: "Engineer".into(),
-            second: "Leader".into(),
-            options: vec![
-                "Engineer",
-                "Leader",
-                "Developer",
-                "Innovator",
-                "Explorer",
-                "Adventurer",
-                "Sponsor",
-                "Pathfinder",
-                "Visionary",
-                "Mentor",
-                "Rescue Diver",
-                "Motorcyclist",
-                "Aspiring Pilot",
-            ]
-            .iter()
-            .map(|&x| x.into())
-            .collect(),
+            first: ctx.props().adjectives.first().unwrap_or(&"Engineer".into()).clone(),
+            second: ctx.props().adjectives.first().unwrap_or(&"Leader".into()).clone(),
+            options: ctx.props().adjectives.clone(),
         }
     }
 
@@ -74,9 +57,9 @@ impl Component for Adjectives {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <div class={classes!(if self.flipped { vec!["adjectives", "adjectives--flipped"] } else { vec!["adjectives"] })}>
-                <span class="adjectives-entry adjectives-entry--first">{self.first.clone()}</span>
-                <span class="adjectives-entry adjectives-entry--second">{self.second.clone()}</span>
+            <div class="adjectives">
+                <span class={classes!(if self.flipped { None } else { Some("active") })}>{self.first.clone()}</span>
+                <span class={classes!(if self.flipped { Some("active") } else { None })}>{self.second.clone()}</span>
             </div>
         }
     }

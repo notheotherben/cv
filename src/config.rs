@@ -16,6 +16,9 @@ pub struct Config {
 
     pub adjectives: Vec<String>,
 
+    #[serde(default)]
+    pub quotes: Vec<QuoteConfig>,
+
     pub details: HashMap<String, String>,
     pub avatar: AvatarConfig,
 
@@ -23,6 +26,9 @@ pub struct Config {
 
     pub biography: DescriptionConfig,
     pub roles: Vec<RoleConfig>,
+
+    #[serde(rename = "looking-for")]
+    pub looking_for: Vec<DescriptionConfig>,
 }
 
 impl Default for Config {
@@ -70,4 +76,10 @@ pub struct RoleConfig {
     pub description: DescriptionConfig,
     #[serde(default)]
     pub impact: Vec<String>,
+}
+
+#[derive(Clone, Deserialize, Serialize)]
+pub struct QuoteConfig {
+    pub quote: String,
+    pub author: String,
 }
