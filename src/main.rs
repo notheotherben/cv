@@ -26,6 +26,12 @@ fn App() -> Html {
             <main>
                 <sections::Intro ..sections::IntroProps::from(&config)/>
 
+                <h2 class="section-header">{"I'm looking for..."}</h2>
+
+                <sections::LookingFor ..sections::LookingForProps::from(&config)/>
+
+                <h2 class="section-header">{"I've worked at..."}</h2>
+
                 {
                     config.roles.iter().map(|role| {
                         html!{
@@ -33,8 +39,6 @@ fn App() -> Html {
                         }
                     }).collect::<Html>()
                 }
-
-                <sections::LookingFor ..sections::LookingForProps::from(&config)/>
             </main>
 
             <footer>

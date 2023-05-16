@@ -30,8 +30,6 @@ pub struct LookingForEntry {
 pub fn LookingFor(props: &LookingForProps) -> Html {
     html! {
         <div class="looking-for">
-            <h2>{"I'm looking for..."}</h2>
-
             {props.items.iter().map(|item| html!{
                 <div>
                     <h3>{&item.title}</h3>
