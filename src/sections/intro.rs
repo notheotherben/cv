@@ -108,7 +108,7 @@ pub fn Details(props: &IntroProps) -> Html {
                     props.social_links.iter().filter(|link| link.kind != "text").map(|link| {
                         html! {
                             <a href={link.url.clone()} target="_blank" rel="noreferrer" alt={&link.text} data-kind={&link.kind}>
-                                <i class={format!("icon-{}", link.kind)}/>
+                                <i class={format!("icon-{}", link.kind)}/> {{&link.text}}
                             </a>
                         }
                     }).collect::<Html>()

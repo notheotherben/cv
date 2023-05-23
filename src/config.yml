@@ -50,10 +50,10 @@ contact:
     text: benjamin@pannell.dev
   - kind: github
     url: https://github.com/notheotherben
-    text: A link to Ben's personal GitHub profile.
+    text: GitHub
   - kind: linkedin
     url: https://www.linkedin.com/in/benjaminpannell
-    text: A link to Ben's personal LinkedIn profile.
+    text: LinkedIn
 
 biography:
   short: |
