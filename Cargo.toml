@@ -8,14 +8,14 @@ futures = "0.3"
 gloo = { version = "0.8" }
 gloo-timers = { version = "0.2.6", features = ["futures"] }
 markdown = "1.0.0-alpha.10"
-rust-embed = { version = "6.7.0", features = ["debug-embed", "include-exclude"] }
+rust-embed = { version = "6.8.1", features = ["debug-embed", "include-exclude"] }
 serde = { version = "1.0.166", features = ["alloc", "derive"] }
 serde_yaml = "0.9.22"
 wasm-bindgen-futures = "0.4"
 yew = { version = "0.20.0", features = ["csr"] }
 
 [build-dependencies]
-vergen = { version = "8.2.1", features = ["git", "gitcl"]}
+vergen = { version = "8.2.3", features = ["git", "gitcl"]}
 
 [profile.release]
 panic = 'abort'

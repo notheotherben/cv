@@ -29,7 +29,7 @@ div.adjectives {
         }
     }
 
-    @media ((not(print)) and (max-width: 720px)) {
+    @media not print and (max-width: 720px) {
         display: none;
     }
 
