@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    types: [ opened, synchronize, reopened, closed ]
 
 env:
   STAGING_DEPLOYMENT_CLIENT_ID: 6e63171f-321c-4fd8-8253-25e946143230
