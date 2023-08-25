@@ -8,7 +8,7 @@ futures = "0.3"
 gloo = { version = "0.10" }
 gloo-timers = { version = "0.3.0", features = ["futures"] }
 markdown = "1.0.0-alpha.11"
-rust-embed = { version = "6.8.1", features = ["debug-embed", "include-exclude"] }
+rust-embed = { version = "8.0.0", features = ["debug-embed", "include-exclude"] }
 serde = { version = "1.0.186", features = ["alloc", "derive"] }
 serde_yaml = "0.9.25"
 wasm-bindgen-futures = "0.4"
