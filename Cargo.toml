@@ -7,7 +7,7 @@ edition = "2021"
 futures = "0.3"
 gloo = { version = "0.10" }
 gloo-timers = { version = "0.3.0", features = ["futures"] }
-markdown = "1.0.0-alpha.11"
+markdown = "1.0.0-alpha.13"
 rust-embed = { version = "8.0.0", features = ["debug-embed", "include-exclude"] }
 serde = { version = "1.0.188", features = ["alloc", "derive"] }
 serde_yaml = "0.9.25"
