@@ -15,7 +15,7 @@ wasm-bindgen-futures = "0.4"
 yew = { version = "0.20.0", features = ["csr"] }
 
 [build-dependencies]
-vergen = { version = "8.2.4", features = ["git", "gitcl"]}
+vergen = { version = "8.2.5", features = ["git", "gitcl"]}
 
 [profile.release]
 panic = 'abort'
