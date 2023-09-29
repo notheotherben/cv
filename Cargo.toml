@@ -12,7 +12,7 @@ rust-embed = { version = "8.0.0", features = ["debug-embed", "include-exclude"] 
 serde = { version = "1.0.188", features = ["alloc", "derive"] }
 serde_yaml = "0.9.25"
 wasm-bindgen-futures = "0.4"
-yew = { version = "0.20.0", features = ["csr"] }
+yew = { version = "0.21.0", features = ["csr"] }
 
 [build-dependencies]
 vergen = { version = "8.2.5", features = ["git", "gitcl"]}
