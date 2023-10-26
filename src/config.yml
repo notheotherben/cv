@@ -173,13 +173,12 @@ roles:
     role: Founder
     location: My personal company
     start-date: "2008"
+    hide-printed: true
     description:
       short: |
         Sierra Softworks is the nom de guerre that I use for personal projects, and has been the banner under which I have released over 200 different open
         source projects since I first started using it in 2008. You can view this list [on GitHub](https://github.com/SierraSoftworks).
       long: |
-        <noprint>
-
         I have been writing, and running, software in production for over two decades now and one of the greatest contributors to my success has been
         the open source community. As a result, I've always tried to contribute back wherever I can - whether that be through contributions to the libraries
         and tools I use on a daily basis, or by releasing the tools I build myself in the hopes that others may gain some value from them.

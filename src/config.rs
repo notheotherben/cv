@@ -73,6 +73,8 @@ pub struct RoleConfig {
     pub start_date: String,
     #[serde(default, rename = "end-date")]
     pub end_date: Option<String>,
+    #[serde(default, rename="hide-printed")]
+    pub hide_printed: Option<bool>,
     pub description: DescriptionConfig,
     #[serde(default)]
     pub impact: Vec<String>,
