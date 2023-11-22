@@ -15,6 +15,7 @@ header {
 
     @media print {
         page-break-after: avoid;
+        opacity: 0;
     }
 
     h1 {
@@ -35,8 +36,9 @@ header {
     text-align: center;
     
     @media print {
-        padding-top: 2rem;
-        page-break-before: always;
+        padding-top: 1rem;
+        page-break-before: auto;
+        page-break-inside: avoid;
         page-break-after: avoid;
     }
 }

@@ -13,6 +13,7 @@
     @media print {
         padding: 0.5rem 1rem;
         page-break-inside: avoid;
+        flex-direction: row;
     }
 
     &>div {

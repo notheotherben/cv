@@ -15,7 +15,6 @@
 
     @media print {
         padding-top: 0.5rem;
-        page-break-before: avoid;
     }
 
     .intro-details {
@@ -28,6 +27,9 @@
 
         @media print {
             page-break-inside: avoid;
+            page-break-after: always;
+            margin: 0 auto;
+            max-width: 70vw;
         }
 
         picture,
@@ -57,6 +59,12 @@
 
             @media print {
                 display: block;
+                font-size: 0;
+
+                i {
+                    font-size: 1rem;
+                }
+
                 &::after {
                     display: inline;
                     content: " " attr(href);
@@ -68,19 +76,6 @@
                         display: none;
                     }
                 }
-            }
-        }
-
-        &::after {
-            content: "View the full version of my resume at https://benjamin.pannell.dev";
-            font-size: 0.8rem;
-            font-weight: 100;
-            text-align: center;
-            padding: 0.5rem;
-            display: none;
-
-            @media print {
-                display: block;
             }
         }
     }

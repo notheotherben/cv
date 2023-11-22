@@ -57,69 +57,57 @@ contact:
 
 biography:
   short: |
-    I'm a Principal SRE who is passionate about the design, development, and operation of complex, business critical services at scale.
+    I'm a Principal SRE who is passionate about the design, development, and operation of complex, business critical services at scale - and the people that build them.
 
   long: |
-    I'm currently a Principal Site Reliability engineer at [Microsoft](https://www.microsoft.com), and the technical lead for Azure's Control Plane SRE team. Over the last 4+ years, I've worked
-    alongside a number of industry veterans to help shape both this team and the way that SRE works at Microsoft, culminating in a 10x improvement in
-    reliability in the face of a 10x increase in traffic, and we're just getting started.
+    I'm currently a Principal Site Reliability engineer at [Microsoft](https://www.microsoft.com), and the European Technical Lead for Azure SRE.
+    Over the last 4+ years I've worked alongside a number of industry veterans to help shape SRE at Microsoft and grow some of our most successful
+    SRE engagements. We've contributed significantly to the Azure platform's reliability, including a 10x improvement in control plane reliability
+    in the face of a 10x increase in traffic, and we're still at the start of our journey.
 
-    I've spent the last decade building and maintaining customer facing apps and services, including everything from C#/C++ desktop applications, to realtime GIS
-    data analytics platforms for agricultural fleet tracking, the backend monitoring platform for one of the world's largest gaming franchises, and most recently
-    the control plane for the world's second largest cloud. This has required a wide range of skills, both technical and non-technical, and you'll find that I'm
-    highly experienced in a diverse range of technologies, system architectures, organizational structures, and leadership roles. I've worn the hat of a "pure"
-    software engineer, a "pure" operations engineer, and the nuanced middle-ground that is Site Reliability Engineering on some of the world's largest platforms;
-    all while supporting, mentoring, and sponsoring the growth of those around me.
+    I've spent the last decade building and maintaining customer facing apps and services, including everything from C++ desktop applications, to the monitoring
+    platforms underpinning the world's largest gaming franchise, and the control plane for one of the world's largest clouds. Doing this has required a combination
+    of extensive technical and non-technical skills spanning everything from software engineering, to SRE, to leadership and mentoring teams of engineers across
+    multiple continents.
 
-    Outside of my core work responsibilities, I have also spent over a decade and a half building and maintaining open source software and projects (which you'll
-    find under my [Sierra Softworks](https://github.com/SierraSoftworks) organization on GitHub) and this has afforded me the opportunity to experiment with, and
-    gain experience in, a significant range of technologies and approaches that have then gone on to inform solutions in my professional career. I'm also an avid
-    sim-aviator, and when the Irish weather permits (or even if it doesn't) you'll often find me adventure motorcycling in the mountains.
-
-    ### What I'm passionate about
-    At the heart of it, I'm a systems thinker. I want to understand the interactions between every actor in a system and the impact that their actions have on the
-    eventual outcome. It's impossible to consider the behaviour of systems without also considering the humans that participate in those same systems, and the
-    intersection between technology and people has been my passion since I "shipped" my first "customer facing" application (a game launcher used by my friends
-    at high school). This same obsession has led me to obsess over how we design and implement systems that support the success of people, viewing every failure
-    as an opportunity to improve resiliency.
-
-    I also recognize that nobody has all the answers, and in many cases nobody has all of the right questions yet either. Sometimes, the best way forward is to
-    take a step and measure the results. This has turned into my second passion, namely how we increase the intrinsic velocity within our systems and simultaneously
-    improve our ability to observe (or predict) the outcomes to enable informed decision making. I routinely write about my experiences in these areas and several others,
-    and if you're curious to learn more about what I feel strongly about and how I think about these problems, [that's a good place to start](https://blog.sierrasoftworks.com).
+    I passionately believe that the best systems are built by the best teams, and that building the best teams depends on culture, sponsorship, psychological safety,
+    and an environment that encourages learning quickly. I have been incredibly fortunate to contribute towards some of these exceptional teams, and I
+    make it my mission to foster similar teams wherever I go, prioritizing diversity, equity, and inclusion for every person I work with. You can read more about
+    my thoughts in this area [on my blog](https://blog.sierrasoftworks.com).
 
 roles:
-  - organization: Microsoft
+  - organization: Microsoft Azure
     role: Principal SRE
     location: Dublin, Ireland
     start-date: January 2019
+    relevant: true
     description:
       short: |
-        I am the technical lead for Azure's Control Plane SRE team, where we have delivered an order of magnitude improvement in reliability
-        while scaling to support an order of magnitude increase in load over the last 4 years.
-      
+        I am the technical lead for Azure SRE in Europe, supporting the growth of our service SRE teams in this geography, informing the direction of Azure SRE
+        globally, and the contributing to the success of the services we manage.
+
       long: |
-        I've been working as an SRE on Azure's Control Plane SRE team since 2019, with a role that has evolved from Senior SRE, to Technical Lead, and now
-        Principal SRE. Over the course of this time, I've helped mentor and support an exceptional team of engineers who have made substantial technical
-        contributions to the reliability of Microsoft's Azure control plane services, most notably [Azure Resource Manager (ARM)][ARM].
+        I joined Microsoft in 2019 as a Senior SRE with the Control Plane SRE team, and in the 4 years since then I have driven several technical
+        initiatives which have cumulatively supported a 10x improvement in platform reliability with a commensurate increase in traffic. Alongside these
+        technical contributions, I've also helped mentor and grow the next generation of Senior and Principal SREs in this space and am now the European
+        technical lead for Azure SRE.
 
-        As a Principal SRE, I am responsible for both the technical direction of the Control Plane SRE team, as well as coordinating and executing on
-        broad organization-level programmes to improve the reliability of Azure's global control plane and cloud services. I have also been responsible
-        for a number of foundational improvements to [ARM][ARM] which have reduced change and deployment cycle times by over 80%, while improving the
-        reliability of the service by over 10x in the face of a 10x increase in traffic.
+        In this capacity, I directly contribute to the technical direction of Azure SRE globally, work closely with our European SRE teams to align
+        approaches, and support the growth of both individuals and new SRE teams in the region. I also work closely with our product and internal platform
+        teams to ensure that the systems and tools we build meet the needs of our teams and customers.
 
-        [ARM]: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview "Azure Resource Manager"
     impact:
       - "**10x improvement in reliability** of Azure Resource Manager in the face of a 10x increase in traffic."
       - "**80% reduction in change cycle time** for Azure Resource Manager."
       - "**90% reduction in monitoring noise** for through a migration to customer journey and synthetic monitoring."
       - "**<4% annual team attrition** through a focus on team culture, autonomy, and growing our engineers."
 
-  - organization: Demonware
-    role: SRE
+  - organization: Activision/Blizzard (Demonware)
+    role: Site Reliability Engineer
     location: Dublin, Ireland
     start-date: September 2016
     end-date: January 2019
+    relevant: true
     description:
       short: |
         I worked as a Site Reliability Engineer on Demonware's Monitoring team, where I was responsible for developing and rolling out a next generation
@@ -146,6 +134,7 @@ roles:
     location: Stellenbosch, South Africa
     start-date: January 2015
     end-date: September 2016
+    relevant: false
     description:
       short: |
         I managed a 10 year old legacy codebase, built a low-level USB communication library in C++ and lead the development of a complex realtime data analytics platform
@@ -156,24 +145,18 @@ roles:
         services used by Cellular carriers to evaluate the safety of their cell installations, to a low-level USB communication library written in C++ (and
         accompanying user interface) for a personal radiation exposure monitor, and the ground up development of a realtime GIS platform providing data analytics
         for farmers conducting crop spraying operations.
-
-        With the exception of my work on [IXUS](https://ixusapp.com/), all of these projects were ground up developments which I was responsible for designing,
-        implementing, testing, and delivering - often on extremely condensed timelines and with little oversight or support. My favourite project in this case
-        was [Farmtrack](https://farmtracksa.com), a combination of a single-page web application and a backend API which continues to operate over 8 years after
-        I delivered it, with minimal maintenance.
     impact:
       - "**Built a [realtime GIS platform](https://farmtracksa.com)** for farmers to track their crop spraying operations, including the frontend, backend,
         and infrastructure management. This platform is still used today, with minimal changes, over 8 years later."
       - "**Developed a low-level USB communication library** and accompanying user interface in C++ for a [personal radiation exposure monitor](https://fieldsense.com/).
         This software is still used today, with minimal changes, over 8 years later."
-      - "**Migrated the organization from a legacy SCM platform to GitLab** and trained the team on how to use it effectively, significantly reducing complexity and ramp-up time for new hires."
       - "**99.6% reduction in cell tower import duration** through optimized software architecture and database design."
 
   - organization: Sierra Softworks
     role: Founder
     location: My personal company
     start-date: "2008"
-    hide-printed: true
+    relevant: false
     description:
       short: |
         Sierra Softworks is the nom de guerre that I use for personal projects, and has been the banner under which I have released over 200 different open
@@ -199,6 +182,7 @@ roles:
     location: Stellenbosch, South Africa
     start-date: January 2011
     end-date: November 2014
+    relevant: false
     description:
       short: |
         I received my honours in Electrical and Electronic Engineering, specializing in embedded systems. I also did a lot of work outside the classroom writing software, everything from Lua on the .NET Runtime
@@ -213,7 +197,8 @@ roles:
       - "**A federated authentication platform** which powered several other projects, including a game played across several campus residences with several hundred users."
 
 looking-for:
-  - short: An Opportunity for Impact
+  - title: An Opportunity for Impact
+    short: I'm passionate about building strong teams and improving our society and world, I'm looking for an organization which shares that passion.
     long: |
       I strongly believe that as a professional engineer, I have a responsibility to deliver value to the organization I work for, and to the world at large.
       As my employer, you're effectively paying for my time with the intention of paying me to solve problems for you. The best way for us to both achieve
@@ -222,7 +207,8 @@ looking-for:
 
       If you're interested in having me join your team, I'd love to hear about what your largest challenges are and how you're planning to invest in solving them.
 
-  - short: A Team of (Empathetic) Experts
+  - title: A Team of (Empathetic) Experts
+    short: It takes a village to raise a child, and a team of experts to build a great product. I'm looking for an organization which recognizes that.
     long: |
       I've been incredibly fortunate over my career, having had the opportunity to work with some of the most talented people in the industry. Over those years,
       I've seen how the right culture, mentorship, and sponsorship can transform a team of motivated individuals into a phenomenal team that is able to tackle
@@ -231,7 +217,8 @@ looking-for:
 
       If that sounds like the culture you're looking to foster, I'd love to hear more about the incentives you've put in place to encourage it.
 
-  - short: Workplace Equality and Equity
+  - title: Workplace Equality and Equity
+    short: I've consistently seen the amazing value that diverse teams bring to the table, and I'm looking for a company that is actively working to improve that.
     long: |
       We work in an industry which is fundamentally unequal and un-equitable towards the majority of people on this planet. In my years of experience,
       some of the best engineers I've ever worked with are those who buck the trend and are able to bring their authentic selves to work.

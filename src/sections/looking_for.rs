@@ -12,8 +12,9 @@ impl From<&crate::config::Config> for LookingForProps {
                 .looking_for
                 .iter()
                 .map(|item| LookingForEntry {
-                    title: item.short.clone().into(),
-                    description: item.long.clone().into(),
+                    title: item.title.clone().into(),
+                    short: item.short.clone().into(),
+                    long: item.long.clone().into(),
                 })
                 .collect(),
         }
@@ -23,7 +24,8 @@ impl From<&crate::config::Config> for LookingForProps {
 #[derive(Properties, PartialEq, Clone)]
 pub struct LookingForEntry {
     pub title: AttrValue,
-    pub description: AttrValue,
+    pub short: AttrValue,
+    pub long: AttrValue,
 }
 
 #[function_component]
@@ -34,7 +36,13 @@ pub fn LookingFor(props: &LookingForProps) -> Html {
                 <div>
                     <h3>{&item.title}</h3>
 
-                    <crate::controls::Markdown content={&item.description}/>
+                    <div class="print">
+                        <crate::controls::Markdown content={&item.short}/>
+                    </div>
+
+                    <div class="noprint">
+                        <crate::controls::Markdown content={&item.long}/>
+                    </div>
                 </div>
             }).collect::<Html>()}
         </div>

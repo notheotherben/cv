@@ -1,8 +1,13 @@
+.roles {
+    @media print {
+        page-break-inside: avoid;
+    }
+}
+
 .role {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
     padding-top: 2rem;
     padding-bottom: 3rem;
 
@@ -14,8 +19,18 @@
     }
 
     @media print {
-        padding: 0.5rem 1rem;
+        padding: 0;
         page-break-inside: avoid;
+
+        &:not(.relevant) {
+            .tldr {
+                display: none;
+            }
+
+            .role-details {
+                display: none;
+            }
+        }
     }
 
     .role-summary {
@@ -49,8 +64,16 @@
         flex: 2;
         margin: 0 2rem;
 
-        .role-description {
-            @media print {
+        @media print {
+            h4 {
+                margin: 0 0.1rem;
+            }
+
+            li p {
+                margin: 0.1rem 0;
+            }
+
+            .role-description {
                 display: none;
             }
         }
@@ -62,10 +85,6 @@
     margin: 2rem 1rem;
     font-size: 0.9rem;
 
-    @media print {
-        font-size: 1rem;
-    }
-
     &::before {
         display: block;
         content: "“TL;DR„";
@@ -74,9 +93,21 @@
         margin-left: -1rem;
         font-size: 0.8rem;
         alt: "Too long; didn't read";
+
+        @media print {
+            display: none;
+        }
     }
     
     p {
         margin: 0.2rem 0.5rem;
+    }
+
+    @media print {
+        margin: 0.5rem 0;
+
+        & p {
+            margin: 0.2rem 0;
+        }
     }
 }

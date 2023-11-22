@@ -30,15 +30,17 @@ fn App() -> Html {
 
                 <sections::LookingFor ..sections::LookingForProps::from(&config)/>
 
-                <h2 class="section-header">{"I've worked at..."}</h2>
+                <div class="roles">
+                    <h2 class="section-header">{"I've worked at..."}</h2>
 
-                {
-                    config.roles.iter().map(|role| {
-                        html!{
-                            <sections::Role ..sections::RoleProps::from(role)/>
-                        }
-                    }).collect::<Html>()
-                }
+                    {
+                        config.roles.iter().map(|role| {
+                            html!{
+                                <sections::Role ..sections::RoleProps::from(role)/>
+                            }
+                        }).collect::<Html>()
+                    }
+                </div>
             </main>
 
             <footer>

@@ -11,7 +11,7 @@ pub struct RoleProps {
     #[prop_or_default]
     pub end_date: Option<AttrValue>,
 
-    pub hide_printed: AttrValue,
+    pub relevant: AttrValue,
 
     pub tldr: AttrValue,
     pub description: AttrValue,
@@ -26,7 +26,7 @@ impl From<&crate::config::RoleConfig> for RoleProps {
             location: value.location.clone().into(),
             start_date: value.start_date.clone().into(),
             end_date: value.end_date.clone().map(|x| x.into()),
-            hide_printed: value.hide_printed.unwrap_or_default().to_string().into(),
+            relevant: value.relevant.unwrap_or_default().to_string().into(),
             tldr: value.description.short.clone().into(),
             description: value.description.long.clone().into(),
             impact: value
@@ -41,7 +41,7 @@ impl From<&crate::config::RoleConfig> for RoleProps {
 #[function_component]
 pub fn Role(props: &RoleProps) -> Html {
     html! {
-        <article class={classes!(if props.hide_printed == "true" { Some("role noprint") } else { Some("role") })}>
+        <article class={classes!(if props.relevant == "true" { Some("role relevant") } else { Some("role") })}>
             <div class="role-summary">
                 <hgroup>
                     <h3>{props.organization.clone()}</h3>

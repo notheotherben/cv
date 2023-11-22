@@ -28,7 +28,7 @@ pub struct Config {
     pub roles: Vec<RoleConfig>,
 
     #[serde(rename = "looking-for")]
-    pub looking_for: Vec<DescriptionConfig>,
+    pub looking_for: Vec<LookingForConfig>,
 }
 
 impl Default for Config {
@@ -73,8 +73,8 @@ pub struct RoleConfig {
     pub start_date: String,
     #[serde(default, rename = "end-date")]
     pub end_date: Option<String>,
-    #[serde(default, rename="hide-printed")]
-    pub hide_printed: Option<bool>,
+    #[serde(default)]
+    pub relevant: Option<bool>,
     pub description: DescriptionConfig,
     #[serde(default)]
     pub impact: Vec<String>,
@@ -84,4 +84,11 @@ pub struct RoleConfig {
 pub struct QuoteConfig {
     pub quote: String,
     pub author: String,
+}
+
+#[derive(Clone, Serialize, Deserialize)]
+pub struct LookingForConfig {
+    pub title: String,
+    pub short: String,
+    pub long: String,
 }

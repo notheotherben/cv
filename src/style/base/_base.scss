@@ -80,7 +80,15 @@ li {
     margin: 0.3rem auto;
 }
 
+.print {
+	display: none;
+}
+
 @media print {
+	.print {
+		display: block;
+	}
+
 	.noprint {
 		display: none !important;
 	}

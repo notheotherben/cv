@@ -6,6 +6,6 @@ mod tldr;
 
 pub use self::markdown::Markdown;
 pub use adjectives::Adjectives;
-pub use picture::{Picture, PictureProps, PictureSource};
-pub use quote::{Quote, Quotes, QuotesProps};
+pub use picture::{Picture, PictureSource};
+pub use quote::{Quotes, QuotesProps};
 pub use tldr::Tldr;

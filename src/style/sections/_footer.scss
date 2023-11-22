@@ -7,6 +7,21 @@ footer {
     padding: 0;
 
     @media print {
-        display: none;
+        .quotes {
+            display: none;
+        }
+
+        &::after {
+            content: "View the full version of my resume at https://benjamin.pannell.dev";
+            font-size: 0.8rem;
+            font-weight: 100;
+            text-align: center;
+            padding: 0.5rem;
+            display: none;
+
+            @media print {
+                display: block;
+            }
+        }
     }
 }
