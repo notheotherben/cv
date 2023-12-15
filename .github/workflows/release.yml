@@ -50,7 +50,7 @@ jobs:
       run: trunk build --release
 
     - name: Upload Artifact for Website
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: site
         path: ./dist
