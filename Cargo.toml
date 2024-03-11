@@ -10,7 +10,7 @@ gloo-timers = { version = "0.3.0", features = ["futures"] }
 markdown = "1.0.0-alpha.16"
 rust-embed = { version = "8.2.0", features = ["debug-embed", "include-exclude"] }
 serde = { version = "1.0.193", features = ["alloc", "derive"] }
-serde_yaml = "0.9.30"
+serde_yaml = "0.9.32"
 wasm-bindgen-futures = "0.4"
 yew = { version = "0.21.0", features = ["csr"] }
 
