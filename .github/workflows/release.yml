@@ -21,7 +21,7 @@ env:
   LIVE_CDN_RESOURCEGROUP: app-resume
   LIVE_CDN_PROFILE: "cdn-resume-bpannell"
   LIVE_CDN_ENDPOINT: "resumebpannell"
-  
+
   DOCKER_IMAGE: spartan563/cv
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
 
     steps:
-    - uses: actions/checkout@v4.1.2
+    - uses: actions/checkout@v4.1.7
 
     - name: cache ~/.cargo
       uses: Swatinem/rust-cache@v2
@@ -44,8 +44,8 @@ jobs:
           target: wasm32-unknown-unknown
 
     - name: Install trunk
-      uses: jetli/trunk-action@v0.4.0
-    
+      uses: jetli/trunk-action@v0.5.0
+
     - name: Build Website
       run: trunk build --release
 
@@ -67,21 +67,21 @@ jobs:
 
     permissions:
       id-token: write
-    
+
     steps:
       - name: Download Artifacts for Website
         uses: actions/download-artifact@v4
         with:
           name: site
           path: ./dist
-          
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
           subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
           tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
           client-id: ${{ env.STAGING_DEPLOYMENT_CLIENT_ID }}
-          
+
       - name: Copy Artifacts to Storage
         uses: azure/CLI@v2
         with:
@@ -95,7 +95,7 @@ jobs:
           inlineScript: |
             echo "Purging CDN"
             az cdn endpoint purge -g ${{ env.STAGING_CDN_RESOURCEGROUP }} -n ${{ env.STAGING_CDN_ENDPOINT }} --profile-name ${{ env.STAGING_CDN_PROFILE }} --content-paths '/*'
-  
+
   deploy-static-web-app:
     name: Deploy Static Web App
     runs-on: ubuntu-latest
@@ -138,14 +138,14 @@ jobs:
     permissions:
       id-token: write
       pages: write
-    
+
     steps:
       - name: Download Artifacts for Website
         uses: actions/download-artifact@v4
         with:
           name: site
           path: ./dist
-          
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
@@ -157,14 +157,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-          
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
           subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
           tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
           client-id: ${{ env.LIVE_DEPLOYMENT_CLIENT_ID }}
-          
+
       - name: Copy Artifacts to Storage
         uses: azure/CLI@v2
         with:
@@ -178,7 +178,7 @@ jobs:
           inlineScript: |
             echo "Purging CDN"
             az cdn endpoint purge -g ${{ env.LIVE_CDN_RESOURCEGROUP }} -n ${{ env.LIVE_CDN_ENDPOINT }} --profile-name ${{ env.LIVE_CDN_PROFILE }} --content-paths '/*'
-  
+
   deploy-docker:
     name: Deploy Docker Image
     runs-on: ubuntu-latest
@@ -200,13 +200,13 @@ jobs:
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           echo "${{ secrets.DOCKER_HUB }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
-          
+
       - name: Calculate version number
         id: version
         run: |
           VERSION=$(git describe --tags 2>/dev/null || git rev-parse --short HEAD)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
+
       - name: Push image to GitHub
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/${{ github.event.repository.name }}
@@ -215,7 +215,7 @@ jobs:
           docker push $IMAGE_ID:latest
           docker tag image $IMAGE_ID:${{ steps.version.outputs.version }}
           docker push $IMAGE_ID:${{ steps.version.outputs.version }}
-          
+
       - name: Push image to Docker Hub
         run: |
           IMAGE_ID=${{ env.DOCKER_IMAGE }}

@@ -7,15 +7,18 @@ edition = "2021"
 futures = "0.3"
 gloo = { version = "0.11" }
 gloo-timers = { version = "0.3.0", features = ["futures"] }
-markdown = "1.0.0-alpha.16"
-rust-embed = { version = "8.3.0", features = ["debug-embed", "include-exclude"] }
-serde = { version = "1.0.197", features = ["alloc", "derive"] }
-serde_yaml = "0.9.33"
+markdown = "1.0.0-alpha.18"
+rust-embed = { version = "8.5.0", features = [
+  "debug-embed",
+  "include-exclude",
+] }
+serde = { version = "1.0.204", features = ["alloc", "derive"] }
+serde_yaml = "0.9.34+deprecated"
 wasm-bindgen-futures = "0.4"
 yew = { version = "0.21.0", features = ["csr"] }
 
 [build-dependencies]
-vergen = { version = "8.3.1", features = ["git", "gitcl"]}
+vergen = { version = "8.3.1", features = ["git", "gitcl"] }
 
 [profile.release]
 panic = 'abort'
