@@ -12,7 +12,7 @@ rust-embed = { version = "8.5.0", features = [
   "debug-embed",
   "include-exclude",
 ] }
-serde = { version = "1.0.207", features = ["alloc", "derive"] }
+serde = { version = "1.0.213", features = ["alloc", "derive"] }
 serde_yaml = "0.9.34+deprecated"
 wasm-bindgen-futures = "0.4"
 yew = { version = "0.21.0", features = ["csr"] }
