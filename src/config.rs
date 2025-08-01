@@ -42,6 +42,7 @@ impl Default for Config {
 pub struct TrackingConfig {
     #[serde(rename = "google-analytics")]
     pub google_analytics: Option<String>,
+    pub medama: Option<String>,
     pub sentry: Option<String>,
 }
 

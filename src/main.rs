@@ -17,6 +17,10 @@ fn App() -> Html {
                 <plugins::GoogleAnalytics tracking_id={google_analytics.clone()}/>
             }
 
+            if let Some(medama) = config.tracking.medama.as_ref() {
+                <plugins::Medama server={medama.clone()}/>
+            }
+
             if let Some(sentry) = config.tracking.sentry.as_ref() {
                 <plugins::Sentry dsn_key={sentry.clone()}/>
             }
