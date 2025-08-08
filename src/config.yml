@@ -2,7 +2,6 @@ name: Benjamin Pannell
 role: Principal SRE
 
 tracking:
-  google-analytics: G-GT5K76WH47
   medama: analytics.sierrasoftworks.com
   sentry: 86cc1b0e98cb4ea1ba3f7e7b83174ac3
 
