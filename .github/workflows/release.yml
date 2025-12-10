@@ -31,7 +31,7 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
 
     steps:
-    - uses: actions/checkout@v6.0.0
+    - uses: actions/checkout@v6.0.1
 
     - name: cache ~/.cargo
       uses: Swatinem/rust-cache@v2
@@ -186,7 +186,7 @@ jobs:
     needs: [build]
 
     steps:
-      - uses: actions/checkout@v6.0.0
+      - uses: actions/checkout@v6.0.1
       - name: Download Artifacts for Website
         uses: actions/download-artifact@v6
         with:
