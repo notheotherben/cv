@@ -4,6 +4,10 @@ updates:
     package-ecosystem: cargo
     schedule:
       interval: daily
+    groups:
+      gloo:
+        patterns:
+          - "gloo*"
   - directory: /
     package-ecosystem: docker
     schedule:
