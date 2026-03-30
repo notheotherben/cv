@@ -60,10 +60,10 @@ biography:
     I'm a Principal SRE who is passionate about the design, development, and operation of complex, business critical services at scale - and the people that build them.
 
   long: |
-    I'm currently a Principal Site Reliability engineer at [Microsoft](https://www.microsoft.com), and the European Technical Lead for Azure SRE.
-    Over the last 4+ years I've worked alongside a number of industry veterans to help shape SRE at Microsoft and grow some of our most successful
-    SRE engagements. We've contributed significantly to the Azure platform's reliability, including a 10x improvement in control plane reliability
-    in the face of a 10x increase in traffic, and we're still at the start of our journey.
+    I'm currently a Principal Site Reliability engineer at [Microsoft](https://www.microsoft.com), and the Global Technical Lead for Azure's Change SRE group.
+    Over the last 6+ years I've worked alongside a number of industry veterans to help shape SRE at Microsoft, grow some of our most successful
+    SRE engagements, and tackle some of our largest reliability challenges. My teams have contributed significantly to Azure's platform reliability,
+    including a 10x improvement in control plane reliability in the face of a 10x increase in traffic, and we're still at the start of our journey.
 
     I've spent the last decade building and maintaining customer facing apps and services, including everything from C++ desktop applications, to the monitoring
     platforms underpinning the world's largest gaming franchise, and the control plane for one of the world's largest clouds. Doing this has required a combination
@@ -72,8 +72,7 @@ biography:
 
     I passionately believe that the best systems are built by the best teams, and that building the best teams depends on culture, sponsorship, psychological safety,
     and an environment that encourages learning quickly. I have been incredibly fortunate to contribute towards some of these exceptional teams, and I
-    make it my mission to foster similar teams wherever I go, prioritizing diversity, equity, and inclusion for every person I work with. You can read more about
-    my thoughts in this area [on my blog](https://blog.sierrasoftworks.com).
+    make it my mission to foster similar teams wherever I go, prioritizing diversity, equity, and inclusion for every person I work with.
 
 roles:
   - organization: Microsoft Azure
@@ -83,18 +82,25 @@ roles:
     relevant: true
     description:
       short: |
-        I am the technical lead for Azure SRE in Europe, supporting the growth of our service SRE teams in this geography, informing the direction of Azure SRE
-        globally, and the contributing to the success of the services we manage.
+        I am currently the global technical lead for Azure's Change SRE group, overseeing ~50 engineers globally who are responsible for the tooling and processes
+        which enable Azure's various product and platform teams to proactively evaluate and manage change-related risk (including the development and deployment
+        of statistical models which assist teams in identifying high risk changes proactively, and the business processes for managing these risks).
 
       long: |
-        I joined Microsoft in 2019 as a Senior SRE with the Control Plane SRE team, and in the 4 years since then I have driven several technical
+        I joined Microsoft in 2019 as a Senior SRE with the Control Plane SRE team, and in the 6 years since then I have driven several technical
         initiatives which have cumulatively supported a 10x improvement in platform reliability with a commensurate increase in traffic. Alongside these
-        technical contributions, I've also helped mentor and grow the next generation of Senior and Principal SREs in this space and am now the European
-        technical lead for Azure SRE.
+        technical contributions, I've also helped mentor and grow the next generation of Senior and Principal SREs in this space and am now the global
+        technical lead for Azure's Change SRE group.
 
-        In this capacity, I directly contribute to the technical direction of Azure SRE globally, work closely with our European SRE teams to align
-        approaches, and support the growth of both individuals and new SRE teams in the region. I also work closely with our product and internal platform
-        teams to ensure that the systems and tools we build meet the needs of our teams and customers.
+        In this capacity, I directly contribute to the technical direction of Azure SRE globally, work closely with global SRE teams to align technical strategy and
+        approaches, and support the growth of both individuals and new SRE teams. I also work closely with our product and internal platform
+        teams to ensure that the systems and tools we build meet the needs of our teams and customers, with a heavy emphasis on tooling which enables
+        teams to proactively identify and manage change-related risk.
+
+        I have led projects which range from the development of foundational configuration management systems with robust safety and verifiability guarantees,
+        to the design and rollout of a global load balancing system for Azure's control plane, and the development and deployment of statistical models which
+        outperform human experts at proactively identifying changes which are likely to result in outages - enabling teams to focus resources on risk mitigation
+        efforts where they have the highest return on investment.
 
     impact:
       - "**10x improvement in reliability** of Azure Resource Manager in the face of a 10x increase in traffic."
@@ -227,4 +233,4 @@ looking-for:
       striving to improve for all.
 
       If you're looking for me to join your organization, I'd like to hear about what you're doing to ensure not just equal, but equitable opportunities
-      for all demographics.
+      for all demographics - and how you're helping make society a better place for everyone.
