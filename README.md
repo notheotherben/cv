@@ -8,14 +8,11 @@ backend development skills, in this case leveraging Rust and WASM cross-compilat
 through [Yew](https://yew.rs) and [Trunk](https://trunkrs.dev).
 
 The website itself is visible at [benjamin.pannell.dev](https://benjamin.pannell.dev)
-and because choosing the right tool for the job is important, it is hosted on
-Azure Static Web Apps, which is a great fit for this type of website as it entirely
-avoids the complexity of managing separate infrastructure.
+and is deployed to GitHub Pages, with an Azure Storage Account acting as a
+secondary host for redundancy.
 
 Of course, for those of you looking to do something slightly different, there's
-also a Docker image available on [Docker Hub](https://hub.docker.com/r/sierrasoftworks/resume)
-and a GitHub action which deploys the website to an Azure Storage Account with
-fronting CDN to provide redundancy should the static web app go down.
+also a Docker image available on [Docker Hub](https://hub.docker.com/r/sierrasoftworks/resume).
 
 ## Development
 ```bash
