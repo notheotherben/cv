@@ -25,6 +25,10 @@ fn App() -> Html {
                 <plugins::Sentry dsn_key={sentry.clone()}/>
             }
 
+            if let Some(umami) = config.tracking.umami.as_ref() {
+                <plugins::Umami server={umami.server.clone()} website_id={umami.website_id.clone()} />
+            }
+
             <sections::Header ..sections::HeaderProps::from(&config)/>
 
             <main>

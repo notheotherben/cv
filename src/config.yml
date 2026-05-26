@@ -2,8 +2,10 @@ name: Benjamin Pannell
 role: Principal SRE
 
 tracking:
-  medama: analytics.sierrasoftworks.com
   sentry: 86cc1b0e98cb4ea1ba3f7e7b83174ac3
+  umami:
+    server: "analytics.sierrasoftworks.com"
+    website-id: "54668193-1d1f-436b-9651-f5d37d598ca8"
 
 adjectives:
   - Engineer

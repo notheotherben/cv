@@ -44,6 +44,14 @@ pub struct TrackingConfig {
     pub google_analytics: Option<String>,
     pub medama: Option<String>,
     pub sentry: Option<String>,
+    pub umami: Option<UmamiTrackingConfig>,
+}
+
+#[derive(Clone, Deserialize, Serialize)]
+pub struct UmamiTrackingConfig {
+    pub server: String,
+    #[serde(rename = "website-id")]
+    pub website_id: String,
 }
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -93,3 +101,4 @@ pub struct LookingForConfig {
     pub short: String,
     pub long: String,
 }
+
